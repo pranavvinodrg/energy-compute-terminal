@@ -126,7 +126,6 @@ html, body {
   border: none;
   border-right: 1px solid var(--border);
 }
-.view-tab:last-child { border-right: none; }
 .view-tab:hover { color: var(--amber); background: var(--bg-hover); }
 .view-tab.active {
   background: var(--amber-faint);
@@ -578,7 +577,6 @@ td.tags { font-size: 9px; }
 .tag.stealth { background: #220033; color: var(--purple); border-color: #553388; }
 .tag.acquired { background: #331a00; color: var(--amber-bright); border-color: #663300; }
 .tag.public { background: #002244; color: var(--blue); border-color: #335577; }
-.tag.wound { background: #330000; color: var(--red); border-color: #663333; }
 .tag.crossstage { background: #002211; color: var(--green); border-color: #005522; }
 
 /* ============ NEWS FEED ============ */
@@ -600,28 +598,6 @@ td.tags { font-size: 9px; }
 .news-feed-source { color: var(--muted); font-size: 9px; margin-top: 3px; font-style: italic; }
 
 /* ============ WHITESPACE VIEW ============ */
-.whitespace-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-  gap: 8px;
-}
-.whitespace-card {
-  background: var(--bg-panel);
-  border: 1px solid var(--border-bright);
-  border-left: 4px solid var(--amber-dim);
-  padding: 12px;
-}
-.ws-card-stage { color: var(--green); font-size: 10px; letter-spacing: 0.5px; margin-bottom: 4px; }
-.ws-card-title { color: var(--amber-bright); font-size: 14px; font-weight: 700; margin-bottom: 6px; }
-.ws-card-desc { color: var(--white); font-size: 11px; line-height: 1.6; margin-bottom: 8px; }
-.ws-card-signal {
-  padding: 6px 8px;
-  background: var(--bg-row);
-  border-left: 2px solid var(--amber);
-  font-size: 10px;
-  color: var(--amber);
-  font-style: italic;
-}
 
 /* ============ DRAWER ============ */
 .drawer {
@@ -677,18 +653,6 @@ td.tags { font-size: 9px; }
 .drawer-val a:hover { text-decoration: underline; }
 
 /* ============ FOOTER ============ */
-.footer {
-  margin-top: 8px;
-  padding: 8px 12px;
-  background: var(--bg-panel);
-  border: 1px solid var(--border);
-  display: flex;
-  justify-content: space-between;
-  font-size: 9px;
-  color: var(--muted);
-  letter-spacing: 0.5px;
-}
-.footer a { color: var(--amber-dim); text-decoration: none; }
 
 /* ============ CHAT PANEL ============ */
 .chat-toggle {
@@ -855,15 +819,7 @@ td.tags { font-size: 9px; }
 .commentary-analyst { color: var(--green); font-size: 10px; letter-spacing: 1px; }
 .commentary-title { color: var(--amber-bright); font-size: 12px; margin: 3px 0; }
 .commentary-take { color: var(--light-muted); font-size: 11px; line-height: 1.6; }
-.feed-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; border: 1px solid var(--border); padding: 10px 12px; margin-bottom: 6px; background: var(--panel); }
-.feed-name { color: var(--amber-bright); font-size: 12px; }
-.feed-focus { color: var(--light-muted); font-size: 10px; margin-top: 2px; }
-.feed-type { color: var(--green); font-size: 9px; letter-spacing: 1px; }
-.feed-remove { background: none; border: 1px solid var(--border); color: var(--muted); cursor: pointer; font-family: inherit; font-size: 9px; padding: 3px 8px; }
-.feed-remove:hover { color: var(--red, #ff5555); border-color: var(--red, #ff5555); }
-.feed-add-row { display: flex; gap: 8px; margin: 12px 0; }
-.feed-add-row input { background: var(--panel); border: 1px solid var(--border); color: var(--amber); font-family: inherit; font-size: 11px; padding: 6px 8px; flex: 1; }
-.brand, .detail-title, .stage-card-title, .drawer-title, .chat-title, .ws-card-title, .news-feed-title, .news-title { font-family: var(--font-head); font-weight: 700; }
+.brand, .detail-title, .stage-card-title, .drawer-title, .chat-title, .news-feed-title, .news-title { font-family: var(--font-head); font-weight: 700; }
 #date, .stage-num, td.stage, .detail-eyebrow { font-family: var(--font-mono); }
 .theme-toggle { background: none; border: 1px solid var(--border-bright); color: var(--amber); cursor: pointer; font-family: var(--font-mono); font-size: 10px; letter-spacing: 1px; padding: 3px 10px; border-radius: 3px; margin-right: 10px; }
 .theme-toggle:hover { border-color: var(--amber); }
@@ -872,10 +828,9 @@ td.tags { font-size: 9px; }
 /* ===== consistency pass ===== */
 a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
 a:hover { text-decoration-thickness: 2px; }
-.source-item a, .drawer-val a, .chat-msg a, .footer a, .commentary-title a, .news-feed-source a, .news-source a { color: var(--link); }
+.source-item a, .drawer-val a, .chat-msg a, .commentary-title a, .news-feed-source a, .news-source a { color: var(--link); }
 .metric-value, .mini-metric-value, .stat-value, td.raised, .stage-count { color: var(--value); }
 .whitespace-item { border-left-color: var(--amber-dim); }
-.ws-card-stage { color: var(--amber-dim); }
 .tag.translator { background: var(--amber-faint); color: var(--green); border-color: var(--green-dim); }
 .tag.stdshift, .tag.stealth { background: var(--amber-faint); color: var(--amber); border-color: var(--border-bright); }
 .tag.crossstage { background: var(--amber-faint); color: var(--green); border-color: var(--border-bright); }
@@ -904,7 +859,6 @@ a:hover { text-decoration-thickness: 2px; }
     <button class="view-tab active" data-view="flow">◈ FLOW</button>
     <button class="view-tab" data-view="companies">☰ COMPANIES</button>
     <button class="view-tab" data-view="news">✦ NEWS</button>
-    <button class="view-tab" data-view="sources">⌘ SOURCES</button>
   </div>
 
   <!-- GUIDING PRINCIPLE -->
@@ -1525,8 +1479,8 @@ const COMPANIES = [
   {n:"CivilGrid", s:1, sub:"Site Data", hq:"San Francisco, US", hqc:"US", y:2023, r:"Pre-Seed", amt:"~$2.2M", inv:"Imagine H2O, Burnt Island Ventures", d:"Aggregates utility, environmental, geotechnical, and GIS site data.", t:["latent"], src1:"https://www.civilgrid.com/", src2:"https://www.crunchbase.com/", ver:"2026-06-30"},
   {n:"Tract", s:1, sub:"Land Aggregation", hq:"Denver, US", hqc:"US", y:2022, r:"PE-backed", amt:"-", inv:"Berkshire Partners", d:"Master-planned data-center land bank: 25,000+ acres, 25 GW potential workload capacity.", t:[], src1:"https://www.tract.com/", src2:"https://www.datacenterfrontier.com/site-selection/article/55308975/", ver:"2026-06-30"},
   {n:"Orennia", s:1, sub:"Site Analytics", hq:"Calgary, CA", hqc:"CA", y:2021, r:"Series B", amt:"~$73M total", inv:"BDC Capital, Energize Capital, Quantum Energy Partners", d:"Energy-transition analytics: siting, valuation, asset performance. Canadian-built platform, NA focus.", t:["latent"], src1:"https://www.orennia.com/", src2:"https://www.crunchbase.com/organization/orennia", ver:"2026-06-30"},
-  {n:"LandGate", s:1, sub:"Site Analytics", hq:"Denver, US", hqc:"US", y:2017, r:"Series A", amt:"$18M total raised per Specter (2019 venture round, 2022 Series B, 2023 venture round)", inv:"NextEra Energy Resources (lead, 2022 Series B), Kimmeridge", d:"Site selection and transmission/energy-transition analytics. STATUS: acquired: by Wood Mackenzie on 2026-06-24 (Specter, Aug 2026).", t:["latent"], src1:"https://www.landgate.com/", src2:"https://www.crunchbase.com/", ver:"2026-08-04"},
-  {n:"Fermi America", s:1, sub:"Campus Developer", hq:"Texas, US", hqc:"US", y:2025, r:"Project Finance", amt:"about $1.55B total raised (incl $682.5M IPO in 2025 plus post-IPO debt facilities through mid-2026)", inv:"Macquarie Group, MUFG Bank, Keystone National Group, CSG Investments, Yorkville Advisors (post-IPO debt providers)", d:"Context: planned $300B / 11 GW DC-and-power campus. Proof point for campus-as-power-asset. STATUS: active (Specter, Aug 2026).", t:["public"], src1:"https://www.fermi-america.com/", src2:"-", ver:"2026-08-04"},
+  {n:"LandGate", s:1, sub:"Site Analytics", hq:"Denver, US", hqc:"US", y:2017, r:"Series A", amt:"$18M total (2019-2023 rounds)", inv:"NextEra Energy Resources (lead, 2022 Series B), Kimmeridge", d:"Site selection and transmission/energy-transition analytics. STATUS: acquired: by Wood Mackenzie on 2026-06-24 (Aug 2026).", t:["latent"], src1:"https://www.landgate.com/", src2:"https://www.crunchbase.com/", ver:"2026-08-04"},
+  {n:"Fermi America", s:1, sub:"Campus Developer", hq:"Texas, US", hqc:"US", y:2025, r:"Project Finance", amt:"about $1.55B total raised (incl $682.5M IPO in 2025 plus post-IPO debt facilities through mid-2026)", inv:"Macquarie Group, MUFG Bank, Keystone National Group, CSG Investments, Yorkville Advisors (post-IPO debt providers)", d:"Context: planned $300B / 11 GW DC-and-power campus. Proof point for campus-as-power-asset. STATUS: active (Aug 2026).", t:["public"], src1:"https://www.fermi-america.com/", src2:"-", ver:"2026-08-04"},
   {n:"Spark Systems", s:1, sub:"Permitting Intelligence", hq:"US", hqc:"US", y:2024, r:"Seed", amt:"$500K (Pre-Seed, Apr 2024)", inv:"Y Combinator (lead), Montage Ventures", d:"Agentic workflows for permitting, competitive intelligence, community sentiment tracking. Supports solar, BESS, DCs, wind, natural gas. Explicitly generation-side, not just load-side.", t:[], src1:"https://www.sparkhq.ai/", src2:"-", ver:"2026-08-04"},
   {n:"Olmsted", s:1, sub:"Infrastructure Permitting Platform", hq:"US", hqc:"US", y:2024, r:"Seed", amt:"-", inv:"-", d:"AI-native permitting for solar, wind, transmission, pipelines, DCs, broadband. Regulatory roadmap generation, AI document drafting, portfolio-level tracking. Serves developers, utilities, legal teams.", t:[], src1:"https://olmstedinfra.com/", src2:"-", ver:"2026-06-30"},
   {n:"NYXIUM Intelligence", s:1, sub:"Siting + Permitting Agent", hq:"US", hqc:"US", y:2025, r:"Seed", amt:"$3.16M (Pre-Seed, Feb 2026)", inv:"Visionaries Tomorrow (lead), EWOR", d:"Agentic scouting for energy, DCs, mining, critical infrastructure. Removes no-go zones upfront via computer vision. Ranks sites by real success probability + compliance readiness.", t:[], src1:"https://nyxium.ai/", src2:"-", ver:"2026-08-04"},
@@ -1596,7 +1550,7 @@ const COMPANIES = [
   // ============ STAGE 5 :: RACK & BOARD ============
   {n:"Vertical Semiconductor", s:5, sub:"GaN Power", hq:"Cambridge, US", hqc:"US", y:2024, r:"Seed", amt:"$11M Oct 2025", inv:"Playground Global (lead), JIMCO Capital, Shin-Etsu Chemical", d:"MIT spinout. Vertical GaN transistors push conversion closer to chip. Claims up to 30% efficiency gain, 50% smaller power footprint.", t:["stdshift"], src1:"https://www.verticalsemi.com/", src2:"-", ver:"2026-06-30"},
   {n:"Navitas Semiconductor", s:5, sub:"GaN/SiC", hq:"Torrance, US", hqc:"US", y:2014, r:"Public NASDAQ:NVTS", amt:"$412M total raised since founding (post-IPO equity rounds)", inv:"Atalaya Capital, Atlantic Bridge (2021 post-IPO round), MESH, Olive Technology Ventures (2020 Series B)", d:"Established GaN power semis. Positioned for NVIDIA 800VDC.", t:["public"], src1:"https://www.navitassemi.com/", src2:"-", ver:"2026-08-04"},
-  {n:"Analog Devices (Empower)", s:5, sub:"Vertical PD", hq:"Wilmington, US", hqc:"US", y:2024, r:"$1.5B acquisition", amt:"$1.5B", inv:"NASDAQ:ADI", d:"ADI acquired Empower Semiconductor ($1.5B) for vertical power delivery. Pubco move that defines the wedge. STATUS: acquired: confirmed via Specter (Specter, Aug 2026).", t:["public","acquired"], src1:"https://www.analog.com/", src2:"-", ver:"2026-08-04"},
+  {n:"Analog Devices (Empower)", s:5, sub:"Vertical PD", hq:"Wilmington, US", hqc:"US", y:2024, r:"$1.5B acquisition", amt:"$1.5B", inv:"NASDAQ:ADI", d:"ADI acquired Empower Semiconductor ($1.5B) for vertical power delivery. Pubco move that defines the wedge. STATUS: acquired (Aug 2026).", t:["public","acquired"], src1:"https://www.analog.com/", src2:"-", ver:"2026-08-04"},
 
   // ============ STAGE 6 :: TRANSIENT LOAD ============
   {n:"ZincFive", s:6, sub:"Ni-Zn UPS", hq:"Tualatin, US", hqc:"US", y:2016, r:"Series F + SPAC", amt:"$30M Series F Dec 2025; $600M SPAC Q1 2026", inv:"SparkLabs Group SPAC merger (ticker ZFIV)", d:"Nickel-zinc batteries for AI-server UPS. $254M raised since founding. Nasdaq listing imminent.", t:[], src1:"https://zincfive.com/", src2:"https://www.geekwire.com/2026/oregon-data-center-battery-maker-zincfive-to-go-public-via-spac-deal-valued-at-600-million/", ver:"2026-06-30"},
@@ -1631,9 +1585,9 @@ const COMPANIES = [
   {n:"Corintis", s:9, sub:"Microfluidic Cold Plates", hq:"Lausanne, CH", hqc:"EU", y:2021, r:"Series A", amt:"$24M Sep 2025", inv:"BlueYard Capital, Founderful, Celsius Industries", d:"AI-designed microfluidic cold plates routed to chip hotspots. 3x heat removal vs standard in Microsoft trials.", t:["stdshift"], src1:"https://corintis.com/", src2:"-", ver:"2026-08-04"},
   {n:"ZutaCore", s:9, sub:"Waterless DTC", hq:"San Jose, US", hqc:"US", y:2016, r:"Series C", amt:"~$70M+", inv:"Carrier (partnership), Mizuho", d:"HyperCool waterless direct-to-chip cooling. Carrier partnership.", t:[], src1:"https://zutacore.com/", src2:"-", ver:"2026-08-04"},
   {n:"Accelsius", s:9, sub:"DTC Cold Plate", hq:"Austin, US", hqc:"US", y:2022, r:"Series B", amt:"~$50M+", inv:"Johnson Controls, Legrand", d:"Next-gen direct-to-chip cold plates targeting ~300 W/cm². Facility integration signal.", t:[], src1:"https://www.accelsius.com/", src2:"-", ver:"2026-08-04"},
-  {n:"LiquidStack", s:9, sub:"CDU + Immersion", hq:"Dallas, US", hqc:"US", y:2012, r:"Series B+", amt:"$20M Series B ext (~$35M total)", inv:"Tiger Global", d:"Coolant distribution units + immersion. US manufacturing in Carrollton TX. 58. STATUS: acquired: by Trane Technologies on 2026-02-10 (Specter, Aug 2026).", t:[], src1:"https://liquidstack.com/", src2:"-", ver:"2026-08-04"},
-  {n:"Phaidra", s:9, sub:"Cooling-as-Control", hq:"Seattle, US", hqc:"US", y:2019, r:"Series B", amt:"~$50M+", inv:"Index Ventures, NVentures (NVIDIA)", d:"AI agents using real-time power draw as early-warning signal for cooling. Cross-stage to 11. 96.", t:["translator","crossstage"], src1:"https://www.phaidra.ai/", src2:"-", ver:"2026-08-04"},
-  {n:"JetCool", s:9, sub:"Chip-Level Liquid", hq:"Littleton, US", hqc:"US", y:2019, r:"Series A", amt:"~$17M", inv:"Schooner Capital, Florence Capital", d:"Microjet cold plate cooling at chip level. 70. STATUS: acquired: by Flex on 2024-11-14 (Specter, Aug 2026).", t:[], src1:"https://jetcool.com/", src2:"-", ver:"2026-08-04"},
+  {n:"LiquidStack", s:9, sub:"CDU + Immersion", hq:"Dallas, US", hqc:"US", y:2012, r:"Series B+", amt:"$20M Series B ext (~$35M total)", inv:"Tiger Global", d:"Coolant distribution units + immersion. US manufacturing in Carrollton TX. STATUS: acquired: by Trane Technologies on 2026-02-10 (Aug 2026).", t:[], src1:"https://liquidstack.com/", src2:"-", ver:"2026-08-04"},
+  {n:"Phaidra", s:9, sub:"Cooling-as-Control", hq:"Seattle, US", hqc:"US", y:2019, r:"Series B", amt:"~$50M+", inv:"Index Ventures, NVentures (NVIDIA)", d:"AI agents using real-time power draw as early-warning signal for cooling. Cross-stage to 11.", t:["translator","crossstage"], src1:"https://www.phaidra.ai/", src2:"-", ver:"2026-08-04"},
+  {n:"JetCool", s:9, sub:"Chip-Level Liquid", hq:"Littleton, US", hqc:"US", y:2019, r:"Series A", amt:"~$17M", inv:"Schooner Capital, Florence Capital", d:"Microjet cold plate cooling at chip level. STATUS: acquired: by Flex on 2024-11-14 (Aug 2026).", t:[], src1:"https://jetcool.com/", src2:"-", ver:"2026-08-04"},
   {n:"Iceotope", s:9, sub:"Immersion", hq:"Sheffield, UK", hqc:"EU", y:2009, r:"Series B", amt:"$26M Series B (Barclays Climate)", inv:"Barclays Climate Ventures, British Patient Capital, ABB", d:"Chassis-level precision immersion cooling. Non-NA HQ, NA-relevant.", t:[], src1:"https://www.iceotope.com/", src2:"https://techfundingnews.com/iceotope-26m-series-b-ai-data-center-liquid-cooling/", ver:"2026-06-30"},
   {n:"CoolIT Systems", s:9, sub:"DTC + Chemistry", hq:"Calgary→acq Ecolab", hqc:"CA", y:2001, r:"Acquired Mar 2026", amt:"$4.75B (Ecolab acq)", inv:"NYSE:ECL", d:"Canadian-origin. Largest pure-play DC liquid cooling M&A. Signal that water chemistry + digital monitoring is now strategic acquisition target.", t:["acquired","public"], src1:"https://www.coolitsystems.com/", src2:"https://www.ecolab.com/news/2026/03/ecolab-to-acquire-coolit-systems-a-global-leader-in-advanced-liquid-cooling-for-next-gen-ai-data-ce", ver:"2026-06-30"},
   {n:"Gradiant (HyperSolved)", s:9, sub:"Water for DCs", hq:"Boston, US", hqc:"US", y:2013, r:"Growth", amt:"$700M+ raised (co)", inv:"Warburg Pincus, Centaurus, BoldCap", d:"HyperSolved = integrated cooling water solution for AI DCs: treatment, CURE chemicals, SmartOps AI, brine mgmt. Explicitly addresses water sourcing + discharge as strategic constraints.", t:[], src1:"https://www.gradiant.com/solutions/hypersolved/", src2:"-", ver:"2026-08-04"},
@@ -1651,7 +1605,7 @@ const COMPANIES = [
   {n:"Buildots", s:10, sub:"Construction AI (UK/IL)", hq:"London/Tel Aviv", hqc:"OTHER", y:2018, r:"Series D", amt:"~$170M", inv:"Insight Partners, Lightspeed, OG Venture Partners", d:"360-degree video → BIM mapping. Non-NA HQ, NA-relevant.", t:[], src1:"https://buildots.com/", src2:"-", ver:"2026-08-04"},
   {n:"Gecko Robotics", s:10, sub:"Inspection", hq:"Pittsburgh, US", hqc:"US", y:2013, r:"Series D", amt:"$125M Jun 2025 (~$1.25B val)", inv:"Cox Enterprises", d:"AI robots for industrial-infra inspection. Beyond early stage; category momentum signal.", t:[], src1:"https://www.geckorobotics.com/", src2:"-", ver:"2026-08-04"},
   {n:"Watney Robotics", s:10, sub:"In-Facility Robots", hq:"Berkeley, US", hqc:"US", y:2023, r:"Seed", amt:"$21M Seed, Apr 2025", inv:"A*, Abstract, Conviction", d:"In-facility break/fix, logistics, routine maintenance autonomy for DCs.", t:[], src1:"https://watneyrobotics.com/", src2:"-", ver:"2026-08-04"},
-  {n:"MaintainX", s:10, sub:"Maintenance OS", hq:"San Francisco, US", hqc:"US", y:2018, r:"Series D", amt:"~$155M+", inv:"Bain Capital Ventures, Bessemer", d:"AI-powered frontline maintenance asset and work intelligence. 950. STATUS: acquired: by Autodesk on 2026-05-28 for approximately $3.6B (Specter, Aug 2026).", t:[], src1:"https://www.getmaintainx.com/", src2:"-", ver:"2026-08-04"},
+  {n:"MaintainX", s:10, sub:"Maintenance OS", hq:"San Francisco, US", hqc:"US", y:2018, r:"Series D", amt:"~$155M+", inv:"Bain Capital Ventures, Bessemer", d:"AI-powered frontline maintenance asset and work intelligence. STATUS: acquired: by Autodesk on 2026-05-28 for approximately $3.6B (Aug 2026).", t:[], src1:"https://www.getmaintainx.com/", src2:"-", ver:"2026-08-04"},
   {n:"DroneDeploy", s:10, sub:"Aerial Site AI", hq:"San Francisco, US", hqc:"US", y:2013, r:"Late stage", amt:"~$140M+", inv:"BVP, Scale Venture Partners", d:"Aerial site data + AI for progress, safety, build quality.", t:[], src1:"https://www.dronedeploy.com/", src2:"https://www.bvp.com/atlas/roadmap-the-ai-data-center-stack", ver:"2026-06-30"},
   {n:"Molg", s:10, sub:"Decommissioning Robotics", hq:"Sterling, US", hqc:"US", y:2022, r:"Seed", amt:"$5.5M Oct 2024", inv:"Closed Loop Partners, Amazon Climate Pledge Fund, ABB", d:"Robotic microfactories autonomously disassemble decommissioned servers. Only anti-cyclical play in the flow.", t:["anticyc"], src1:"https://molg.ai/", src2:"https://www.bvp.com/atlas/roadmap-the-ai-data-center-stack", ver:"2026-06-30"},
   {n:"Flexnode", s:10, sub:"Modular DC", hq:"Bethesda, US", hqc:"US", y:2018, r:"Series A", amt:"$12.5M+ total (Series A amount undisclosed, led by Eaton Corporation, Jan 2026, plus $9M seed 2024 and $3.5M ARPA-E grant 2023)", inv:"Eaton (lead)", d:"Modular/prefab data center systems.", t:[], src1:"https://flexnode.com/", src2:"https://www.flexnode.io/", ver:"2026-08-04"},
@@ -1722,7 +1676,7 @@ const COMPANIES = [
   {n:"Turquoise Power", s:2, sub:"SMR Developer", hq:"Calgary, CA", hqc:"CA", y:2022, r:"Early", amt:"-", inv:"-", d:"Technology-agnostic SMR project developer-integrator: finances, builds, operates for DCs, remote communities, industry. Canadian.", t:[], src1:"https://turquoisepower.energy/capabilities/", src2:"-", ver:"2026-07-04"},
   {n:"Critical Energy", s:2, sub:"Geothermal Turbines", hq:"Hawthorne, US", hqc:"US", y:2024, r:"Seed", amt:"$22M", inv:"Susa Ventures, Upfront, MaC VC, SVB (debt)", d:"SpaceX-alumni team building modular geothermal turbomachinery, the equipment bottleneck, not the drilling. 2.5MW demo 2027, 5MW module for EGS.", t:[], src1:"https://criticalenergy.com/why-geothermal/", src2:"https://techcrunch.com/2026/06/17/spacex-alum-nabs-22m-to-turn-rocket-engines-into-geothermal-power-plants/", ver:"2026-07-04"},
   {n:"400C Energy", s:2, sub:"Geothermal (EGS)", hq:"Denver, US", hqc:"US", y:2020, r:"Series A", amt:"-", inv:"-", d:"Superhot EGS (up to 400°C); 275°C pilot well pair targeting 20MWe; $45-55/MWh LCOE target; stimulation demo completed Jul 2025.", t:[], src1:"https://www.400cenergy.com/", src2:"https://www.thinkgeoenergy.com/400c-energy-completes-demonstration-of-stimulation-technology-for-superhot-geothermal/", ver:"2026-07-04"},
-  {n:"Gradient Geothermal", s:2, sub:"Geothermal Modular", hq:"Denver, US", hqc:"US", y:2024, r:"Pre-seed", amt:"$2.5M DOE grant (Jan 2022), raised under prior name Transitional Energy", inv:"X Machina Capital", d:"Modular geothermal ORC power + cooling (HXC Sled) for DCs, telecom, industrial; Chord Energy pilot in North Dakota; subscription power model. STATUS: renamed: Gradient Geothermal (formerly Transitional Energy) (Specter, Aug 2026).", t:[], src1:"https://gradientgeothermal.com/", src2:"-", ver:"2026-08-04"},
+  {n:"Gradient Geothermal", s:2, sub:"Geothermal Modular", hq:"Denver, US", hqc:"US", y:2024, r:"Pre-seed", amt:"$2.5M DOE grant (Jan 2022), raised under prior name Transitional Energy", inv:"X Machina Capital", d:"Modular geothermal ORC power + cooling (HXC Sled) for DCs, telecom, industrial; Chord Energy pilot in North Dakota; subscription power model. STATUS: renamed: Gradient Geothermal (formerly Transitional Energy) (Aug 2026).", t:[], src1:"https://gradientgeothermal.com/", src2:"-", ver:"2026-08-04"},
   {n:"Birch Geothermal", s:2, sub:"Geothermal (EGS)", hq:"Colorado, US", hqc:"US", y:2026, r:"Seed", amt:"-", inv:"Montauk Capital", d:"Second-gen EGS applying oil/gas flow-control and intelligent wells; emerged Jun 2026 explicitly targeting AI DC baseload.", t:[], src1:"https://www.birchgeothermal.com/", src2:"-", ver:"2026-07-04"},
   {n:"Noon Energy", s:2, sub:"LDES", hq:"Palo Alto, US", hqc:"US", y:2018, r:"Series B", amt:"$50M+", inv:"At One Ventures, Aramco Ventures, Clean Energy Ventures, Emerson Collective", d:"Reversible carbon-cycle battery; demonstrated 200+ hour duration Jan 2026 in containerized system. BTM generation pairing for DCs.", t:[], src1:"https://www.noon.energy/technology", src2:"-", ver:"2026-07-04"},
   {n:"Energy Dome", s:2, sub:"LDES", hq:"Milan, IT", hqc:"EU", y:2020, r:"Growth", amt:"$60M+", inv:"Google (strategic)", d:"CO2 thermo-mechanical battery (8-24h). Google strategic investment; Ireland 23MW/200MWh; Arizona SRP 19MW (2029).", t:[], src1:"https://energydome.com/technology/", src2:"https://www.utilitydive.com/news/energy-dome-srp-salt-river-project-build-19-mw-co2-battery-system/823015/", ver:"2026-07-04"},
@@ -1795,20 +1749,20 @@ const COMPANIES = [
   {n:"Gritt Robotics", s:10, sub:"Construction Autonomy", hq:"New York, US", hqc:"US", y:2023, r:"Grant", amt:"$32.9M total ($26M Series A led by Obvious Ventures, Jul 2026, plus $6.4M pre-seed 2024 and $500K DOE grant 2024)", inv:"US DOE", d:"AI + robotics automating renewable-energy construction, starting with utility-scale solar hardware.", t:[], src1:"https://gritt.ai/", src2:"-", ver:"2026-08-04"},
   {n:"Maximo (AES)", s:10, sub:"Solar Install Robot", hq:"US", hqc:"US", y:2023, r:"Corporate", amt:"-", inv:"AES, NVIDIA ecosystem", d:"AI-enabled solar module installation robot; 100MW installed at Bellefield, the largest US solar+storage project.", t:[], src1:"https://maxrobotics.ai/", src2:"-", ver:"2026-08-04"},
   {n:"Hyperion Robotics", s:10, sub:"3D-Printed Concrete", hq:"Espoo, FI", hqc:"EU", y:2019, r:"Venture", amt:"$7.1M", inv:"Course Corrected, European Innovation Council Fund, Lifeline Ventures, Ubermorgen Ventures", d:"3D-printed reinforced concrete foundations, micro-factories for energy infrastructure footings.", t:[], src1:"https://hyperionrobotics.com/", src2:"-", ver:"2026-08-04"},
-  {n:"LIVIO Building Systems", s:10, sub:"Prefab AI Factory", hq:"Los Altos, US", hqc:"US", y:2017, r:"Private", amt:"-", inv:"-", d:"Multi-trade panelized building system for rapid AI factory construction; 99-day deployment target; shown at NVIDIA GTC 2026. 71.", t:[], src1:"https://golivio.com/", src2:"-", ver:"2026-08-04"},
+  {n:"LIVIO Building Systems", s:10, sub:"Prefab AI Factory", hq:"Los Altos, US", hqc:"US", y:2017, r:"Private", amt:"-", inv:"-", d:"Multi-trade panelized building system for rapid AI factory construction; 99-day deployment target; shown at NVIDIA GTC 2026.", t:[], src1:"https://golivio.com/", src2:"-", ver:"2026-08-04"},
   {n:"Buildroid", s:10, sub:"Construction Robotics", hq:"Dubai, AE", hqc:"OTHER", y:2025, r:"Series A", amt:"$2.1M", inv:"-", d:"Block-laying robots with AI orchestration, BIM-to-built pipeline; UAE pilots.", t:[], src1:"https://buildroid.ai/", src2:"-", ver:"2026-07-04"},
   {n:"Skillit", s:10, sub:"Craft Labor Platform", hq:"New York, US", hqc:"US", y:2021, r:"Series A+", amt:"$13.6M", inv:"Bow Capital, MetaProp, Building Ventures, Suffolk Technologies, WND Ventures", d:"Data-driven craft-worker hiring platform for contractors, first mover against the 439K-worker shortage; direct answer to the trade-labor whitespace.", t:[], src1:"https://skillit.com/", src2:"-", ver:"2026-08-04"},
-  {n:"EPG", s:10, sub:"Modular DC", hq:"Singapore, SG", hqc:"OTHER", y:2004, r:"Series B", amt:"$120M total", inv:"Silicon Peak, Forebright, Alibaba Cloud, Decarbonization Partners", d:"Prefabricated modular DC shelters cutting deployment from 2-3 years to 6-9 months; $100M Series B Feb 2026. 55.", t:[], src1:"https://epg-module.com/", src2:"-", ver:"2026-08-04"},
-  {n:"DayOne", s:10, sub:"Hyperscale Developer", hq:"Singapore, SG", hqc:"OTHER", y:2022, r:"Series B + debt", amt:"$8.6B+ incl. debt", inv:"Maybank-led facilities", d:"APAC hyperscale DC developer (ex-GDS International); $4.6B Johor financing; SIJORI hub strategy. 1129.", t:[], src1:"https://dayonedc.com/", src2:"-", ver:"2026-08-04"},
+  {n:"EPG", s:10, sub:"Modular DC", hq:"Singapore, SG", hqc:"OTHER", y:2004, r:"Series B", amt:"$120M total", inv:"Silicon Peak, Forebright, Alibaba Cloud, Decarbonization Partners", d:"Prefabricated modular DC shelters cutting deployment from 2-3 years to 6-9 months; $100M Series B Feb 2026.", t:[], src1:"https://epg-module.com/", src2:"-", ver:"2026-08-04"},
+  {n:"DayOne", s:10, sub:"Hyperscale Developer", hq:"Singapore, SG", hqc:"OTHER", y:2022, r:"Series B + debt", amt:"$8.6B+ incl. debt", inv:"Maybank-led facilities", d:"APAC hyperscale DC developer (ex-GDS International); $4.6B Johor financing; SIJORI hub strategy.", t:[], src1:"https://dayonedc.com/", src2:"-", ver:"2026-08-04"},
   {n:"Korial", s:10, sub:"O&M Robotics", hq:"Darmstadt, DE", hqc:"EU", y:2019, r:"Venture", amt:"$25.8M", inv:"Blue Bear Capital, Climate Investment, Futury Capital, Earlybird Venture Capital", d:"Autonomous industrial operations platform (ex-Energy Robotics): robots, drones, sensors for facility inspection.", t:[], src1:"https://korial.com/", src2:"-", ver:"2026-08-04"},
-  {n:"Reconext", s:10, sub:"Decommissioning", hq:"Mexicali, MX + NL", hqc:"OTHER", y:2021, r:"Private", amt:"-", inv:"-", d:"DC decommissioning + asset recovery at scale (Teleplan/Clover merger); second-life hardware channel. Molg-adjacent incumbent-scale player. 1312.", t:[], src1:"https://reconext.com/", src2:"-", ver:"2026-08-04"},
+  {n:"Reconext", s:10, sub:"Decommissioning", hq:"Mexicali, MX + NL", hqc:"OTHER", y:2021, r:"Private", amt:"-", inv:"-", d:"DC decommissioning + asset recovery at scale (Teleplan/Clover merger); second-life hardware channel. Molg-adjacent incumbent-scale player.", t:[], src1:"https://reconext.com/", src2:"-", ver:"2026-08-04"},
   {n:"Novitio", s:10, sub:"IT Asset Resale", hq:"Aalborg, DK", hqc:"EU", y:2020, r:"Private", amt:"-", inv:"-", d:"Automated B2B marketplace for used IT equipment across Europe, circular-economy channel for the 18-36 month GPU refresh wave.", t:[], src1:"https://novitio.com/", src2:"-", ver:"2026-08-04"},
   // ============ JULY 2026 SOURCING SPRINT :: STAGE 11 ============
   {n:"PADO AI", s:11, sub:"Energy Twin DCIM", hq:"Malibu, US", hqc:"US", y:2025, r:"Seed", amt:"$6M", inv:"NovaWave Capital, LG NOVA", d:"PadOS Digital Energy Twin for real-time DC power + workload orchestration; unlocks stranded compute capacity, raises GPU utilization, lowers PUE. 14 employees as of Jul 2026, up from 7 in Dec 2025.", t:["latent"], src1:"https://pado.co/", src2:"-", ver:"2026-08-04"},
-  {n:"Zendo Energy", s:11, sub:"Energy Brokerage SW", hq:"London, UK", hqc:"EU", y:2024, r:"Seed", amt:"correction: approximately 2.3M USD/1.75M GBP pre-seed (May 2025), not $4.5M", inv:"Fly Ventures (lead), Octopus Ventures, PactVC", d:"Smart energy brokerage + predictive analytics for DC operators: bespoke tariffs, cost + carbon optimization without uptime compromise. 10 employees as of Jul 2026, up from 7 in Dec 2025.", t:["translator"], src1:"https://zendoenergy.com/", src2:"-", ver:"2026-08-04"},
+  {n:"Zendo Energy", s:11, sub:"Energy Brokerage SW", hq:"London, UK", hqc:"EU", y:2024, r:"Seed", amt:"~$2.3M pre-seed (May 2025)", inv:"Fly Ventures (lead), Octopus Ventures, PactVC", d:"Smart energy brokerage + predictive analytics for DC operators: bespoke tariffs, cost + carbon optimization without uptime compromise. 10 employees as of Jul 2026, up from 7 in Dec 2025.", t:["translator"], src1:"https://zendoenergy.com/", src2:"-", ver:"2026-08-04"},
   {n:"Neuralwatt", s:11, sub:"Compute Power Mgmt", hq:"US", hqc:"US", y:2024, r:"Seed", amt:"-", inv:"Plug and Play", d:"Power management at the compute layer: density per kW, stranded-power monetization, grid-aware control within SLAs; energy-based pricing model. 4 employees as of Jul 2026, roughly flat.", t:["latent"], src1:"https://neuralwatt.com/", src2:"-", ver:"2026-08-04"},
   {n:"Clear Current", s:11, sub:"Energy Procurement AI", hq:"Beaverton, US", hqc:"US", y:2024, r:"Seed", amt:"$4.3M", inv:"Rho Capital Partners (lead), Avesta Fund, Coreline Ventures, Montauk Climate", d:"AI virtual energy manager: predicts, audits and procures power for large enterprise loads. 9 employees as of Jul 2026, up from 6 in Dec 2025.", t:[], src1:"https://clearcurrent.ai/", src2:"-", ver:"2026-08-04"},
-  {n:"avoltra", s:11, sub:"Energy OS", hq:"Nuremberg, DE", hqc:"EU", y:2024, r:"Seed", amt:"correction: approximately EUR2.3M / $2.7M pre-seed (Jul 2025), not $5M", inv:"Project A Ventures (lead)", d:"Energy operating system for industrial loads: consumption, generation, procurement, flexibility in one modular platform. 7 employees as of Jul 2026, up from 6 in Dec 2025.", t:[], src1:"https://avoltra.io/", src2:"-", ver:"2026-08-04"},
+  {n:"avoltra", s:11, sub:"Energy OS", hq:"Nuremberg, DE", hqc:"EU", y:2024, r:"Seed", amt:"~EUR2.3M pre-seed (Jul 2025)", inv:"Project A Ventures (lead)", d:"Energy operating system for industrial loads: consumption, generation, procurement, flexibility in one modular platform. 7 employees as of Jul 2026, up from 6 in Dec 2025.", t:[], src1:"https://avoltra.io/", src2:"-", ver:"2026-08-04"},
   {n:"Power Dime", s:11, sub:"Power Procurement SW", hq:"Portland ME, US", hqc:"US", y:2024, r:"Pre-seed", amt:"$155K", inv:"Angels", d:"Energy-lifecycle OS (plan/buy/monitor) for DCs: claims PPA + interconnection timelines cut from 6-12 months to weeks. 7 employees as of Jul 2026, roughly flat.", t:[], src1:"https://powerdime.io/", src2:"-", ver:"2026-08-04"},
   {n:"Blackcurrant AI", s:11, sub:"Energy Procurement AI", hq:"Chicago, US", hqc:"US", y:2022, r:"Seed", amt:"$25K pre-seed (Mar 2023, Transform); separate Seed announced May 21 2026 led by Exelon Foundation 2c2i program, amount undisclosed", inv:"Transform (pre-seed lead), Exelon Foundation (seed lead)", d:"Autonomous agent for energy infrastructure planning, procurement and execution across BESS, gas, fuel cells, renewables (1MW-800MW sites). 16 employees as of Jul 2026, up from 14 in Dec 2025.", t:[], src1:"https://blackcurrant.ai/", src2:"-", ver:"2026-08-04"},
   {n:"Ornn AI", s:11, sub:"Compute Financialization", hq:"New York, US", hqc:"US", y:2025, r:"Seed", amt:"update: approximately $38.7M total, $5.7M seed (Oct 2025) plus a $33M extension closed Jun 24 2026 led by a16z crypto", inv:"-", d:"GPU compute exchange + Ornn Compute Price Index (OCPI) from printed transactions; ICE partnership to launch GPU compute futures (May 2026). 18 to 23 employees as of Jul 2026, up from 6 in Dec 2025.", t:["standard-shift"], src1:"https://ornn.com/", src2:"https://ir.theice.com/press/news-details/2026/ICE-and-Ornn-to-Launch-GPU-Compute-Futures-Contracts/default.aspx", ver:"2026-08-04"},
@@ -1819,7 +1773,7 @@ const COMPANIES = [
   {n:"GPU Trader", s:11, sub:"GPU Marketplace", hq:"Seattle, US", hqc:"US", y:2024, r:"Stealth", amt:"-", inv:"-", d:"API-first enterprise marketplace for GPU capacity rental + secondary market.", t:["stealth"], src1:"https://gputrader.io/", src2:"-", ver:"2026-08-04"},
   {n:"CarbonForge", s:11, sub:"Carbon-Aware Inference", hq:"Montreal, CA", hqc:"CA", y:2026, r:"Pre-seed", amt:"-", inv:"Mila ecosystem", d:"Mila spinoff making energy a first-class optimization target for inference: joules-per-token via compiler/kernel/precision/batching, no app rewrite. Canadian entrant toward the carbon-aware-arbitrage whitespace. 6 employees as of Jun 2026, up from 1 in Dec 2025.", t:[], src1:"https://carbonforge.ai/", src2:"-", ver:"2026-08-04"},
   {n:"Versiro", s:11, sub:"Power Trading AI", hq:"Trondheim, NO", hqc:"EU", y:2022, r:"Seed", amt:"$2.5M", inv:"Alliance VC (lead), Sondo Capital, Startuplab, Fortress Fund, NTNU Technology Transfer, plus angels", d:"NTNU spinout: AI copilot for power producers making real-time market decisions across 6 countries. 11 employees as of Jun 2026, roughly flat.", t:[], src1:"https://versiro.com/", src2:"-", ver:"2026-08-04"},
-  {n:"GridBeyond", s:11, sub:"VPP / DERMS", hq:"Dublin, IE", hqc:"EU", y:2010, r:"Growth", amt:"correction: approximately $109 to 111M total across 8 rounds (Specter aggregates $109.4M, CB Insights $111.1M), not $123.8M", inv:"Samsung Ventures, EIP, ABB, Mirova, Alantra", d:"AI virtual power plant managing 8.1GW of DERs across 12 countries; €12M round led by Samsung Ventures (Mar 2026).", t:["translator"], src1:"https://gridbeyond.com/", src2:"-", ver:"2026-08-04"},
+  {n:"GridBeyond", s:11, sub:"VPP / DERMS", hq:"Dublin, IE", hqc:"EU", y:2010, r:"Growth", amt:"~$110M total across 8 rounds", inv:"Samsung Ventures, EIP, ABB, Mirova, Alantra", d:"AI virtual power plant managing 8.1GW of DERs across 12 countries; €12M round led by Samsung Ventures (Mar 2026).", t:["translator"], src1:"https://gridbeyond.com/", src2:"-", ver:"2026-08-04"},
   {n:"Loadwise", s:11, sub:"DC Grid Flexibility", hq:"Berlin, DE", hqc:"EU", y:2026, r:"Pre-seed", amt:"-", inv:"-", d:"Connects DC operations to energy markets and grid signals for flexible scheduling, European digital-sovereignty angle. 2 employees, flat since founding.", t:["translator"], src1:"https://loadwise.ai/", src2:"-", ver:"2026-08-04"},
   {n:"PhysaFlow", s:11, sub:"Infra Orchestration", hq:"US", hqc:"US", y:2026, r:"Pre-seed", amt:"-", inv:"Harvard accelerator", d:"Real-time orchestration of power, cooling, water, heat and workloads without new hardware; shadow-mode deployment.", t:[], src1:"https://physaflow.com/", src2:"-", ver:"2026-08-04"},
   {n:"Tvavium", s:11, sub:"Workload Optimization", hq:"Portland, US", hqc:"US", y:2026, r:"Pre-seed", amt:"-", inv:"-", d:"Workload-level optimization and orchestration software for DC efficiency. 11 employees as of Jun 2026, up from 4 six months earlier.", t:[], src1:"https://tvavium.ai/", src2:"-", ver:"2026-08-04"},
@@ -1842,7 +1796,7 @@ const COMPANIES = [
   {n:"Irreversible", s:7, sub:"Analog Memristor Compute", hq:"Sherbrooke, CA", hqc:"CA", y:2024, r:"Pre-seed", amt:"$734,997 grant (Innovation for Defence Excellence and Security, Jul 2025) plus an undisclosed pre-seed equity round (Jan 2026)", inv:"Quantacet (lead), Business Development Bank of Canada, Capital Labs, Cycle Momentum, Frostbite Capital, Tofino Capital, UCeed", d:"Memristor-based fully-analog AI processors from a quantum-control/nanofab team; claims ~1000x power reduction. Quebec deep tech, deeply early. 19 (Jun 2026), roughly flat.", t:[], src1:"https://irreversible.tech/", src2:"-", ver:"2026-08-04"},
   {n:"Hedgehog", s:8, sub:"GPU Cluster Networking", hq:"US", hqc:"US", y:2023, r:"Seed", amt:"-", inv:"-", d:"Ex-Cisco leadership: open-source SONiC-based networking for GPU clusters, neocloud networking without hyperscaler headcount.", t:[], src1:"https://hedgehog.tech/", src2:"-", ver:"2026-08-03"},
   {n:"Wafer", s:11, sub:"Kernel Agents", hq:"San Francisco, US", hqc:"US", y:2024, r:"Seed (YC S25)", amt:"$4M", inv:"Fifty Years (lead), Liquid 2 Ventures, Y Combinator", d:"AI agents as autonomous performance engineers, rewrite GPU kernels, batching, memory layout; claims 2.8x over SGLang. Compute optimizing compute. 11 employees as of Jun 2026, up from 4 six months earlier.", t:[], src1:"https://wafer.ai/", src2:"-", ver:"2026-08-04"},
-  {n:"Open Inference", s:11, sub:"TPU Inference Cloud", hq:"Berkeley, US", hqc:"US", y:2025, r:"Pre-seed", amt:"-", inv:"Laude (Konwinski)", d:"Architecture surgery converting GPU-native models to run ~4x faster on TPUs; reportedly 1T tokens/month and $30K MRR. Laude seeded TensorMesh and Inferact, same pattern, earlier. 1 employee, flat Feb through Jun 2026.", t:[], src1:"https://openinference.com/", src2:"https://www.openinference.ai/ (note: the domain openinference.com resolves in Specter to an unrelated biometric MFA company, Private Identity, founded 2017 in Washington DC, do not conflate)", ver:"2026-08-04"},
+  {n:"Open Inference", s:11, sub:"TPU Inference Cloud", hq:"Berkeley, US", hqc:"US", y:2025, r:"Pre-seed", amt:"-", inv:"Laude (Konwinski)", d:"Architecture surgery converting GPU-native models to run ~4x faster on TPUs; reportedly 1T tokens/month and $30K MRR. Laude seeded TensorMesh and Inferact, same pattern, earlier. 1 employee, flat Feb through Jun 2026.", t:[], src1:"https://www.openinference.ai/", src2:"-", ver:"2026-08-04"},
   {n:"OpenInfer", s:11, sub:"Inference OS", hq:"San Mateo, CA", hqc:"US", y:2024, r:"Seed", amt:"$8M seed (Feb 2025)", inv:"Angels reportedly incl. Jeff Dean, Eric Schmidt fund, Gokul Rajaram (verify)", d:"Inference OS for agentic workloads, led by Kam Eshghi (ex-Lightbits/NVIDIA). Angel roster unverified, flagged.", t:[], src1:"https://openinfer.io/", src2:"-", ver:"2026-08-04"},
   {n:"Sutro", s:11, sub:"Batch Inference", hq:"San Francisco, US", hqc:"US", y:2024, r:"Bootstrapped", amt:"~$427K ARR", inv:"None", d:"Serverless batch inference, async token economics, the cheapest tokens in the market. Revenue without venture money. 10 employees as of Jun 2026, up from 5 in Dec 2025.", t:[], src1:"https://sutro.sh/", src2:"-", ver:"2026-08-04"},
   {n:"NotDiamond", s:11, sub:"Model Routing", hq:"San Francisco, US", hqc:"US", y:2024, r:"Seed", amt:"$2.3M", inv:"Defy", d:"Query-level model routing now focused on coding agents. The neutral-router seat if OpenRouter sells to a lab. 35 employees as of Jun 2026, up from 27 in Dec 2025.", t:[], src1:"https://www.notdiamond.ai/", src2:"-", ver:"2026-08-04"},
@@ -1851,10 +1805,10 @@ const COMPANIES = [
   {n:"Cedana", s:11, sub:"GPU Checkpoint/Restore", hq:"New York, US", hqc:"US", y:2023, r:"Pre-seed (YC)", amt:"~$500K", inv:"Y Combinator", d:"GPU checkpoint/restore and live migration, pause, move, resume across GPUs. The utilization primitive every scheduler needs.", t:[], src1:"https://cedana.ai/", src2:"-", ver:"2026-08-04"},
   {n:"Hosted.ai", s:11, sub:"GPU Virtualization", hq:"San Jose, US", hqc:"US", y:2024, r:"Seed", amt:"$19M (Mar 2026)", inv:"Creandum (lead), Golden Sparrow Ventures, Hersir Ventures, People Ventures, Repeat Ventures, Tekton Ventures, z21 Ventures", d:"GPU virtualization and multi-tenant sharing for cloud providers, attacks the 30-50% idle problem at the hypervisor level.io, ex-OnApp), James . 51 employees as of Jun 2026, up from 28 in Dec 2025.", t:[], src1:"https://hosted.ai/", src2:"https://hosted.ai/resources/hostedai-closes-19m-seed-round-to-transform-gpu-infrastructure-economics/", ver:"2026-08-04"},
   {n:"Stealthium", s:11, sub:"GPU Observability", hq:"San Francisco, US", hqc:"US", y:2024, r:"Stealth", amt:"-", inv:"Self-funded", d:"GPU fleet observability: deep telemetry and silent-degradation detection from single node to multi-cluster. Pre-round. 16 employees as of Jun 2026, up from 10 in Dec 2025.", t:["stealth"], src1:"https://stealthium.io/", src2:"-", ver:"2026-08-04"},
-  {n:"Clockwork", s:11, sub:"Cluster Resilience", hq:"Palo Alto, US", hqc:"US", y:2018, r:"Series A", amt:"correction: $41.575M total across two Series A rounds, $21M Mar 2022 and $20.575M Sep 2025, both led by NEA", inv:"NEA; Lip-Bu Tan, John Chambers (angels)", d:"FleetIQ: sub-microsecond network synchronization, deterministic performance, 90%+ reduction in disruptive failures; 1.1-1.5x utilization gains. 57 employees as of Jun 2026, up from 41 in Dec 2025.", t:[], src1:"https://clockwork.io/", src2:"-", ver:"2026-08-04"},
+  {n:"Clockwork", s:11, sub:"Cluster Resilience", hq:"Palo Alto, US", hqc:"US", y:2018, r:"Series A", amt:"$41.6M total across two Series A rounds (2022, 2025), both led by NEA", inv:"NEA; Lip-Bu Tan, John Chambers (angels)", d:"FleetIQ: sub-microsecond network synchronization, deterministic performance, 90%+ reduction in disruptive failures; 1.1-1.5x utilization gains. 57 employees as of Jun 2026, up from 41 in Dec 2025.", t:[], src1:"https://clockwork.io/", src2:"-", ver:"2026-08-04"},
   {n:"PolarGrid", s:11, sub:"Edge GPU Network", hq:"Vancouver, CA", hqc:"CA", y:2024, r:"Seed (CDL)", amt:"$1M pre-seed (Nov 2025), led by Garage Capital", inv:"Garage Capital (lead); Creative Destruction Lab Compute stream is a non-equity accelerator, not confirmed as a capital source", d:"Distributed edge GPU network for real-time inference: sub-30ms P95, 15 metro nodes targeted summer 2026, OpenAI-compatible API. 5 employees as of Jun 2026, up from 3 in Dec 2025.", t:[], src1:"https://polargrid.ai/", src2:"-", ver:"2026-08-04"},
 
-  // ============ AUG 2026 :: SPECTER DISCOVERY ============
+  // ============ AUG 2026 :: DISCOVERY ============
   {n:"fraQtl", s:7, sub:"KV-cache/weight compression", hq:"New York, US", hqc:"US", y:2026, r:"Stealth/Unfunded", amt:"-", inv:"-", d:"fraQtl compresses LLM weights and KV cache to reduce memory footprint and improve inference efficiency, built by a solo founder and positioned to work with open models such as Llama, Mistral and Qwen. Fills open seat: MoE expert-placement / memory-tiering software.", t:["stealth"], src1:"https://www.fraqtl.ai/", src2:"https://www.linkedin.com/company/fraqtl-ai", ver:"2026-08-04"},
   {n:"Voltex Solutions Inc.", s:11, sub:"energy-market IT software", hq:"Calgary, Canada", hqc:"CA", y:2019, r:"Unfunded", amt:"-", inv:"-", d:"Voltex Solutions builds IT infrastructure management and business-intelligence tools for participants in Canadian wholesale energy markets, currently focused on the Alberta market rather than Hydro-Quebec or Ontario specifically. Fills open seat: Canadian both-sides-of-meter energy-compute software.", t:[], src1:"https://www.voltex.ca/", src2:"https://www.linkedin.com/company/voltex-solutions", ver:"2026-08-04"},
   {n:"r9s.ai", s:11, sub:"AI gateway / model routing", hq:"San Jose, US", hqc:"US", y:2025, r:"Stealth/Unfunded", amt:"-", inv:"-", d:"r9s.ai provides a unified AI API gateway that routes and load-balances LLM inference requests across multiple providers, self-reporting over 100,000 users on its routing endpoint. Fills open seat: neutral model-routing / AI gateway infrastructure.", t:["stealth"], src1:"https://www.routetokens.com/", src2:"https://www.linkedin.com/company/r9s-ai", ver:"2026-08-04"},
@@ -2053,8 +2007,6 @@ function lsSet(key, val) {
   try { localStorage.setItem(key, JSON.stringify(val)); } catch(e) {}
 }
 let WATCHLIST = new Set(lsGet("flowterm_watchlist", []));
-let CUSTOM_FEEDS = lsGet("flowterm_custom_feeds", []);
-let REMOVED_FEEDS = new Set(lsGet("flowterm_removed_feeds", []));
 function toggleWatch(name, ev) {
   if (ev) ev.stopPropagation();
   if (WATCHLIST.has(name)) WATCHLIST.delete(name); else WATCHLIST.add(name);
@@ -2344,75 +2296,7 @@ const COMMENTARY = [
 ];
 
 // ============================================================
-// DATA :: TRACKED FEEDS (sources panel)
 // ============================================================
-const FEEDS = [
-  {name:"SemiAnalysis", url:"https://newsletter.semianalysis.com/", type:"ANALYST", focus:"AI DC capex, semis supply chain, grid + BTM energy models (Dylan Patel et al.)"},
-  {name:"Nutty", url:"https://nuttycld.substack.com/", type:"ANALYST", focus:"Chip-side power path: 800VDC, GaN/SiC, VRMs, backside power"},
-  {name:"Citrini Research", url:"https://www.citriniresearch.com/", type:"ANALYST", focus:"Thematic: electrification, atoms-vs-bits, AI infrastructure baskets"},
-  {name:"Irrational Analysis", url:"https://irrationalanalysis.substack.com/", type:"ANALYST", focus:"Power semiconductors, 800V DC architecture, semi trades"},
-  {name:"Doomberg", url:"https://newsletter.doomberg.com/", type:"ANALYST", focus:"Energy markets, gas, nuclear, grid constraints, DC power sourcing"},
-  {name:"Construction Physics", url:"https://www.construction-physics.com/", type:"ANALYST", focus:"DC construction, infrastructure buildout economics (Brian Potter)"},
-  {name:"Casey Handmer", url:"https://caseyhandmer.wordpress.com/", type:"ANALYST", focus:"Solar+battery maximalism, DC-native architectures, energy cost curves"},
-  {name:"Austin Vernon", url:"https://www.austinvernon.site/", type:"ANALYST", focus:"Energy economics, geothermal, thermal storage, electricity markets"},
-  {name:"Sightline Climate", url:"https://www.sightlineclimate.com/", type:"RESEARCH", focus:"DC delays, capex tracking, climate-infra deal flow"},
-  {name:"Data Center Dynamics", url:"https://www.datacenterdynamics.com/", type:"PRESS", focus:"Primary industry press, builds, deals, power, cooling"},
-  {name:"Data Center Frontier", url:"https://www.datacenterfrontier.com/", type:"PRESS", focus:"DC industry analysis and site selection"},
-  {name:"Latitude Media", url:"https://www.latitudemedia.com/", type:"PRESS", focus:"Energy-transition media: DC power policy, interconnection, VPPs"},
-  {name:"Canary Media", url:"https://www.canarymedia.com/", type:"PRESS", focus:"Clean energy news, grid, storage"},
-  {name:"Heatmap News", url:"https://heatmap.news/", type:"PRESS", focus:"Climate/energy policy, community opposition tracking"},
-  {name:"Utility Dive", url:"https://www.utilitydive.com/", type:"PRESS", focus:"Utility sector, FERC/ISO regulatory moves"},
-  {name:"BetaKit", url:"https://betakit.com/", type:"PRESS", focus:"Canadian startup funding news"},
-  {name:"The Logic", url:"https://thelogic.co/", type:"PRESS", focus:"Canadian tech + business"},
-  {name:"FERC", url:"https://www.ferc.gov/news-events/news", type:"PRIMARY", focus:"Interconnection dockets, §206 orders, RM26-4"},
-  {name:"ERCOT", url:"https://www.ercot.com/news", type:"PRIMARY", focus:"Batch Zero, WLPUN, large-load rules"},
-  {name:"PJM Inside Lines", url:"https://insidelines.pjm.com/", type:"PRIMARY", focus:"Queue cycles, capacity auctions, EIT"},
-  {name:"NVIDIA Developer Blog", url:"https://developer.nvidia.com/blog/", type:"PRIMARY", focus:"800VDC, rack architectures, roadmap signals"},
-  {name:"Open Compute Project", url:"https://www.opencompute.org/", type:"PRIMARY", focus:"Diablo 400, ORV3, power/cooling specs"},
-  {name:"Dell'Oro Group", url:"https://www.delloro.com/", type:"RESEARCH", focus:"Networking + DC infrastructure market share"},
-  {name:"Uptime Institute Journal", url:"https://journal.uptimeinstitute.com/", type:"RESEARCH", focus:"Reliability, workforce, operations data"},
-  {name:"Fabricated Knowledge", url:"https://www.fabricatedknowledge.com/", type:"ANALYST", focus:"Semiconductor deep dives, memory and networking cycles"},
-  {name:"Asianometry", url:"https://www.asianometry.com/", type:"ANALYST", focus:"Semiconductor history and supply chains, video essays"},
-  {name:"More Than Moore", url:"https://morethanmoore.substack.com/", type:"ANALYST", focus:"Silicon roadmaps, packaging, chip architecture (Ian Cutress)"},
-  {name:"Chips and Cheese", url:"https://chipsandcheese.com/", type:"ANALYST", focus:"Microarchitecture deep dives, accelerator benchmarks"},
-  {name:"Interconnects", url:"https://www.interconnects.ai/", type:"ANALYST", focus:"Frontier model training and inference trends (Nathan Lambert)"},
-  {name:"Stratechery", url:"https://stratechery.com/", type:"ANALYST", focus:"Platform strategy, hyperscaler business models"},
-  {name:"Volts", url:"https://www.volts.wtf/", type:"ANALYST", focus:"Grid policy, clean energy deep interviews (David Roberts)"},
-  {name:"Cleanview", url:"https://www.cleanview.co/", type:"ANALYST", focus:"BTM generation tracking, power project data (Michael Thomas)"},
-  {name:"Dgtl Infra", url:"https://dgtlinfra.com/", type:"ANALYST", focus:"Data center and digital infrastructure primers, ownership maps"},
-  {name:"Epoch AI", url:"https://epoch.ai/", type:"RESEARCH", focus:"Compute trends, training run tracking, AI supply data"},
-  {name:"New Street Research", url:"https://www.newstreetresearch.com/", type:"RESEARCH", focus:"Institutional semis and infrastructure research"},
-  {name:"TrendForce", url:"https://www.trendforce.com/", type:"RESEARCH", focus:"HBM, DRAM, and foundry supply-demand data"},
-  {name:"Yole Group", url:"https://www.yolegroup.com/", type:"RESEARCH", focus:"Advanced packaging, photonics, power semiconductor markets"},
-  {name:"LightCounting", url:"https://www.lightcounting.com/", type:"RESEARCH", focus:"Optical components and CPO market tracking"},
-  {name:"650 Group", url:"https://650group.com/", type:"RESEARCH", focus:"AI networking and data center equipment share"},
-  {name:"Synergy Research", url:"https://www.srgresearch.com/", type:"RESEARCH", focus:"Hyperscale capex, colo market share, DC capacity"},
-  {name:"LBNL Energy Analysis", url:"https://eta.lbl.gov/", type:"RESEARCH", focus:"The canonical US data center energy usage reports"},
-  {name:"EPRI", url:"https://www.epri.com/", type:"RESEARCH", focus:"Utility-side DC load research, DCFlex initiative"},
-  {name:"BloombergNEF", url:"https://about.bnef.com/", type:"RESEARCH", focus:"Energy transition finance, power market outlooks"},
-  {name:"Wood Mackenzie", url:"https://www.woodmac.com/", type:"RESEARCH", focus:"Power markets, grid edge, energy supply chains"},
-  {name:"Grid Strategies", url:"https://gridstrategiesllc.com/", type:"RESEARCH", focus:"Transmission policy, load growth reports"},
-  {name:"The Brattle Group", url:"https://www.brattle.com/", type:"RESEARCH", focus:"Capacity markets, rate design, interconnection economics"},
-  {name:"The Information", url:"https://www.theinformation.com/", type:"PRESS", focus:"AI infrastructure scoops, DC deal reporting"},
-  {name:"RTO Insider", url:"https://www.rtoinsider.com/", type:"PRESS", focus:"FERC, ISO/RTO proceedings, the regulatory record"},
-  {name:"E&E News (Politico)", url:"https://www.eenews.net/", type:"PRESS", focus:"Energy and environment policy reporting"},
-  {name:"The Register", url:"https://www.theregister.com/", type:"PRESS", focus:"Data center and enterprise infrastructure news, skeptical lens"},
-  {name:"HPCwire", url:"https://www.hpcwire.com/", type:"PRESS", focus:"HPC and AI systems, deployments, benchmarks"},
-  {name:"ServeTheHome", url:"https://www.servethehome.com/", type:"PRESS", focus:"Server, rack, and networking hardware teardowns"},
-  {name:"Data Center Knowledge", url:"https://www.datacenterknowledge.com/", type:"PRESS", focus:"DC industry news and operator coverage"},
-  {name:"NucNet", url:"https://www.nucnet.org/", type:"PRESS", focus:"Nuclear industry news incl. SMR-DC deals"},
-  {name:"World Nuclear News", url:"https://world-nuclear-news.org/", type:"PRESS", focus:"Reactor licensing and deployment tracking"},
-  {name:"ThinkGeoEnergy", url:"https://www.thinkgeoenergy.com/", type:"PRESS", focus:"Geothermal project and technology news"},
-  {name:"NERC", url:"https://www.nerc.com/", type:"PRIMARY", focus:"Reliability assessments, LTRA, adequacy data"},
-  {name:"NRC ADAMS", url:"https://www.nrc.gov/reading-rm/adams.html", type:"PRIMARY", focus:"Reactor licensing dockets, the SMR paper trail"},
-  {name:"EIA", url:"https://www.eia.gov/", type:"PRIMARY", focus:"US energy data, generation and consumption statistics"},
-  {name:"UALink Consortium", url:"https://ualinkconsortium.org/", type:"PRIMARY", focus:"Scale-up interconnect spec, member ecosystem"},
-  {name:"CXL Consortium", url:"https://computeexpresslink.org/", type:"PRIMARY", focus:"Memory fabric spec cadence"},
-  {name:"Jukan (Citrini Research)", url:"https://www.citriniresearch.com/", type:"ANALYST", focus:"Semiconductor supply chain intelligence: memory, HBM, Korea fab ecosystem"},
-  {name:"Zephyr (Citrini Research)", url:"https://www.citriniresearch.com/", type:"ANALYST", focus:"Semiconductor analysis, Semis Memo series with Jukan: memory cycles, supply chain"},
-  {name:"Shanu Mathew (The Balance)", url:"https://shanumathew.com/", type:"ANALYST", focus:"Energized-GW framework, AI power demand, grid investment; PM at $250B+ asset manager"},
-  {name:"Power 2026 (Neel Somani)", url:"https://power2026.ai/", type:"ANALYST", focus:"Power market microstructure primer: marginal pricing, HRCOs, spark spreads, DC development"}
-];
 
 function hasSource(n) { return !!(n.sourceUrl || SOURCE_URLS[n.source]); }
 function renderSourceLink(name, url) {
@@ -2470,8 +2354,6 @@ function render() {
     attachCompaniesHandlers();
   } else if (state.view === "news") {
     main.innerHTML = renderNewsView();
-  } else if (state.view === "sources") {
-    main.innerHTML = renderSourcesView();
   }
   const total = COMPANIES.length;
   const news = STAGES.reduce((a,s) => a + s.news.filter(hasSource).length, 0);
@@ -2840,94 +2722,6 @@ function setNewsStage(id) {
   render();
 }
 
-function renderSourcesView() {
-  const removed = REMOVED_FEEDS;
-  const active = FEEDS.filter(fd => !removed.has(fd.name));
-  const byType = {ANALYST: [], RESEARCH: [], PRESS: [], PRIMARY: [], CUSTOM: CUSTOM_FEEDS};
-  active.forEach(fd => (byType[fd.type] = byType[fd.type] || []).push(fd));
-  const section = (label, feeds, custom) => feeds && feeds.length ? `
-    <div class="panel-label" style="padding: 10px 0 6px; color: var(--green);">◈ ${label} · ${feeds.length}</div>
-    ${feeds.map(fd => `
-      <div class="feed-row">
-        <div>
-          <div class="feed-name"><a href="${escapeHtml(fd.url).replace(/"/g, '&quot;')}" target="_blank" rel="noopener">${escapeHtml(fd.name)}</a> <span class="feed-type">· ${escapeHtml(fd.type || "CUSTOM")}</span></div>
-          <div class="feed-focus">${escapeHtml(fd.focus || fd.url)}</div>
-        </div>
-        <button class="feed-remove" onclick="removeFeed('${fd.name.replace(/'/g,"\\'")}', ${custom ? "true" : "false"})">REMOVE</button>
-      </div>
-    `).join("")}
-  ` : "";
-  return `
-    <div class="panel-label" style="padding: 8px 0; color: var(--amber-dim);">⌘ TRACKED SOURCES · ${active.length + CUSTOM_FEEDS.length} feeds</div>
-    <div style="color:var(--light-muted); font-size:11px; margin-bottom:12px; line-height:1.7;">
-      These are the sources scanned when the terminal is refreshed (weekly sourcing sprints + news sweeps). Add anything you want watched, analyst substacks, ISO dockets, company blogs. Removals and additions persist in this browser. To trigger a refresh, run the weekly update prompt in Cowork; it reads this list.
-    </div>
-    <div class="feed-add-row">
-      <input type="text" id="feedName" placeholder="source name (e.g. 'Interconnections.fyi')" />
-      <input type="text" id="feedUrl" placeholder="https://..." />
-      <button class="chip" onclick="addFeed()">+ ADD SOURCE</button>
-      <button class="chip" onclick="restoreFeeds()" title="Bring back any default sources you removed">RESTORE DEFAULTS</button>
-    </div>
-    ${section("ANALYST SUBSTACKS", byType.ANALYST)}
-    ${section("RESEARCH", byType.RESEARCH)}
-    ${section("INDUSTRY PRESS", byType.PRESS)}
-    ${section("PRIMARY / REGULATORY", byType.PRIMARY)}
-    ${section("YOUR ADDITIONS", CUSTOM_FEEDS, true)}
-  `;
-}
-
-function addFeed() {
-  const name = (document.getElementById("feedName") || {}).value || "";
-  const url = (document.getElementById("feedUrl") || {}).value || "";
-  if (!name.trim() || !url.trim()) return;
-  if (!/^https?:\/\//i.test(url.trim())) { alert("URL must start with http:// or https://"); return; }
-  CUSTOM_FEEDS.push({name: name.trim(), url: url.trim(), type: "CUSTOM", focus: url.trim()});
-  lsSet("flowterm_custom_feeds", CUSTOM_FEEDS);
-  render();
-}
-function restoreFeeds() {
-  REMOVED_FEEDS = new Set();
-  lsSet("flowterm_removed_feeds", []);
-  render();
-}
-function removeFeed(name, isCustom) {
-  if (!isCustom && !confirm("Remove " + name + " from tracked sources? (RESTORE DEFAULTS brings it back)")) return;
-  if (isCustom) {
-    CUSTOM_FEEDS = CUSTOM_FEEDS.filter(fd => fd.name !== name);
-    lsSet("flowterm_custom_feeds", CUSTOM_FEEDS);
-  } else {
-    REMOVED_FEEDS.add(name);
-    lsSet("flowterm_removed_feeds", [...REMOVED_FEEDS]);
-  }
-  render();
-}
-
-function renderOpenView() {
-  return `
-    <div class="panel-label" style="padding: 8px 0; color: var(--amber-dim);">
-      ◇ OPPORTUNITIES · ${WHITESPACE.length} venture-shaped gaps
-    </div>
-    <div style="color:var(--light-muted); font-size:11px; margin-bottom:12px; line-height:1.6;">
-      Method: each stage's physics defines its constraints (FLOW tab); the 304-company map shows where solutions cluster; an opportunity is a constraint with crowding evidence around it and an empty seat inside it. Each card states the evidence, the gap, why it is venture-shaped, and the entry signal to watch.
-    </div>
-    <div class="whitespace-grid">
-      ${WHITESPACE.map(w => {
-        const stage = STAGES.find(s => s.id === w.stage);
-        return `
-          <div class="whitespace-card">
-            <div class="ws-card-stage">STAGE ${stage.code} · ${stage.short}</div>
-            <div class="ws-card-title">${w.title}</div>
-            ${w.crowded ? `<div class="ws-card-desc" style="margin-bottom:6px;"><span style="color:var(--green); font-size:9px; letter-spacing:1px;">WHERE COMPANIES CLUSTER · </span>${w.crowded}</div>` : ""}
-            <div class="ws-card-desc"><span style="color:var(--amber); font-size:9px; letter-spacing:1px;">THE GAP · </span>${w.desc}</div>
-            ${w.why ? `<div class="ws-card-desc" style="margin-top:6px;"><span style="color:var(--value); font-size:9px; letter-spacing:1px;">WHY A STARTUP WINS HERE · </span>${w.why}</div>` : ""}
-            <div class="ws-card-signal">SIGNAL: ${w.signal}</div>
-          </div>
-        `;
-      }).join("")}
-    </div>
-  `;
-}
-
 // ============================================================
 // FILTER/SORT (Companies view)
 // ============================================================
@@ -3249,7 +3043,6 @@ function parseChatQuery(query) {
   if (/^(apply|apply as filter|open in companies)/.test(q)) { p.intent = "apply"; return p; }
   if (/^(export|csv)/.test(q)) { p.intent = "export"; return p; }
   if (/my (list|watchlist)|^saved/.test(q)) { p.intent = "list"; p.saved = true; }
-  if (/source|feed|tracked/.test(q) && !/open.source/.test(q)) { p.intent = "sources"; return p; }
 
   // refinement: leading connective or reference to prior results
   if (/^(of (those|these)|among (those|these)|only|just|now|and )/.test(q) || /\b(of those|of these|them|narrow)\b/.test(q)) p.refine = true;
@@ -3445,11 +3238,6 @@ function processChatQuery(q) {
   if (p.intent === "export") {
     exportCSV();
     return addChatMessage("bot", "⇩ Exported the COMPANIES view's current filter as CSV. Tip: say <em>apply</em> first to push a chat result into that view, then <em>export</em>.");
-  }
-  if (p.intent === "sources") {
-    const n = FEEDS.filter(f => !REMOVED_FEEDS.has(f.name)).length + CUSTOM_FEEDS.length;
-    const an = FEEDS.filter(f => f.type === "ANALYST" && !REMOVED_FEEDS.has(f.name)).map(f => f.name).join(", ");
-    return addChatMessage("bot", `<strong>◈ ${n} tracked feeds.</strong> Analyst substacks: ${an}. Manage them in the <strong>⌘ SOURCES</strong> tab, additions there get scanned in the weekly update sprint.`);
   }
 
   // --- direct company lookup (exact-ish name) ---
