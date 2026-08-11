@@ -2,7 +2,7 @@
 
 A Bloomberg-terminal-style map of the venture landscape between primary energy and AI compute, built around the thesis that the AI buildout is a continuous physical process that turns electrons into tokens and heat. Every company sits somewhere on that flow. Value accrues at chokepoints on the flow, and a new company creates one either by shortening the flow, physically, electrically, or organizationally, or by owning a scarcity the flow cannot route around.
 
-The terminal maps 450 companies across the US, Canada, Europe, and beyond, along the electron's journey: 01 Siting, Permits & Financing · 02 Generation & Site Power · 03 Grid Interconnect & Transmission · 04 Facility Power Conversion (800VDC) · 05 Rack & Board Power · 06 Transient Load Management · 07 Compute & Memory · 08 Interconnect & Networking · 09 Thermal & Water · 10 Physical Execution · 11 Compute Provisioning & Orchestration.
+The terminal maps 451 companies across the US, Canada, Europe, and beyond, along the electron's journey: 01 Siting, Permits & Financing · 02 Generation & Site Power · 03 Grid Interconnect & Transmission · 04 Facility Power Conversion (800VDC) · 05 Rack & Board Power · 06 Transient Load Management · 07 Compute & Memory · 08 Interconnect & Networking · 09 Thermal & Water · 10 Physical Execution · 11 Compute Provisioning & Orchestration.
 
 ## Why this exists
 
