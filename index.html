@@ -413,6 +413,9 @@ html, body {
   margin-top: 3px;
 }
 .pattern-list, .whitespace-list { display: flex; flex-direction: column; gap: 8px; }
+.move-row { display: flex; gap: 12px; margin-bottom: 10px; align-items: baseline; }
+.move-tag { font-family: var(--font-mono); font-size: 9px; letter-spacing: 1.5px; color: var(--amber); min-width: 62px; flex-shrink: 0; }
+.move-row p { margin: 0; }
 .pattern-item, .whitespace-item {
   background: var(--bg-row);
   padding: 8px 10px;
@@ -1016,11 +1019,6 @@ const STAGES = [
       {date: "2026-05", title: "Texas PUCT SB6 draft rules on site control", desc: "Public Utility Commission of Texas published proposed rule 16 TAC §25.194 requiring developers to demonstrate site control and post financial security before full studies begin.", source: "PUCT"},
       {date: "2026-02", title: "State DC policy expansion accelerates", desc: "300+ DC bills filed in 30+ US states; 12+ moratorium bills; 140+ local groups blocking or delaying ~$60B in investment.", source: "MultiState"}
     ],
-    patterns: [
-      {name: "AI-native permitting data flywheel", desc: "Structured, queryable, predictive datasets extracted from a 50K-firm manual market. Data network effects: each permit processed improves the next."},
-      {name: "Land aggregation as a service", desc: "Pre-arranged master-planned campuses sold or leased to hyperscalers. Real-estate PE capital shape with venture-adjacent data/relationship value."},
-      {name: "Performance underwriting for BTM delivery", desc: "Insurance-like product backing BTM developers' delivery commitments. Analog to kWh Analytics for solar PPAs."}
-    ],
     whitespace: [
       {title: "Generation-side permitting software", desc: "Paces and Lorica own the DC-siting side. Nobody owns the gas-plant, BESS, or SMR permitting flywheel. 29% of PJM project slippage is permit-driven, most of it on generation, not load."},
       {title: "Performance LOC underwriting", desc: "Switch Datacenter closed a multi-billion-dollar performance letter-of-credit facility in 2026 to back its grid obligations. The analog for BTM developers' delivery promises to their tenants is unnamed."}
@@ -1083,11 +1081,6 @@ const STAGES = [
       {date: "2025-09", title: "Natron Energy ceases operations", desc: "Sodium-ion cell maker shuts down despite ARPA-E support and planned $1.4B NC factory. Cautionary datapoint on cell-manufacturing capex risk.", source: "Multiple"},
       {date: "2026-05", title: "BC Hydro launches competitive process for AI/DC power", desc: "British Columbia allocating up to 400 MW for AI and data centers over first two years. Selection results September 2026.", source: "BC.gov"}
     ],
-    patterns: [
-      {name: "Firm-clean baseload emergence", desc: "Geothermal (Fervo, Sage) and thermal-battery (Antora, Rondo) are the only 24/7 firm clean options at scale sub-decade. High ELCC accreditation."},
-      {name: "Manufacturing arbitrage", desc: "Boom (supersonic engine cores), Mainspring (linear generators), Ayr (Indian transformer mfg), compress lead times 2-5x by supply-chain reroute. Wedge, not moat."},
-      {name: "Stranded-power conversion", desc: "Crusoe's paradigm, flared methane, wind curtailment, or crypto interconnect converted to AI compute. ~6 GW of ready interconnect from miners."}
-    ],
     whitespace: [
       {title: "BTM software wrappers around incumbent iron", desc: "Bloom, Bergen, Wärtsilä, INNIO, Mainspring own the hardware. Wedge: dispatch software, fuel logistics, performance underwriting, WLPUN compliance. 8-12 companies will form here in 24 months."},
       {title: "Bitcoin-miner-to-AI conversion services", desc: "~6 GW of ready interconnect converting. Picks-and-shovels, cooling retrofits, water adds, GPU hosting, tier-2 power exchanges, is unnamed."}
@@ -1128,11 +1121,6 @@ const STAGES = [
       {date: "2025-12", title: "FERC opens Docket RM26-4", desc: "Rulemaking on faster interconnection of large loads above 20MW at DOE direction. Utility co-location rules for DCs at power plants.", source: "FERC"},
       {date: "2025-11", title: "VEIR demonstrates 3 MW superconducting power delivery", desc: "MIT-spinout demos superconducting cable for AI DC. $75M Series B backed by Munich Re and Microsoft Climate Innovation Fund.", source: "VEIR"},
       {date: "2025-05", title: "Gridcare emerges from stealth", desc: "$13.5M seed announcement. AI to find latent grid headroom. Portland General Electric case: 80 MW ramping to 400 MW by 2029.", source: "Gridcare"}
-    ],
-    patterns: [
-      {name: "Latent capacity as vertical thesis", desc: "Every startup here extracts capacity from existing infrastructure. Gridcare (grid headroom), TS Conductor (corridor capacity), GridAstra (thermal limits), LineVision (dynamic ratings)."},
-      {name: "Both-sides-of-the-meter translators", desc: "Camus, ThinkLabs, Gridcare sell to both utilities and DC operators. Structurally rare position, neither side has data the other needs; translator captures the spread."},
-      {name: "Manufacturing arbitrage window", desc: "Ayr's Indian contract manufacturing beats industry lead time 2-5x. VEIR's superconducting tape achieves 10x same-voltage power density. Wedge lasts until incumbents add capacity."}
     ],
     whitespace: [
       {title: "Hidden ELCC headroom software", desc: "SemiAnalysis: 'smartest DC developers can find hidden headroom.' Software that surfaces accredited capacity utilities themselves can't see. No named startup yet."},
@@ -1177,10 +1165,6 @@ const STAGES = [
       {date: "2025-11", title: "Amperesand $80M for SST", desc: "Singapore-HQ SST developer flagged as non-NA competitive context.", source: "Amperesand"},
       {date: "2025-03", title: "NVIDIA formalizes 800VDC architecture", desc: "GTC keynote and technical blog. Rubin Ultra targets 1 MW/rack; 800V DC required to reduce copper mass to physically buildable amounts.", source: "NVIDIA"}
     ],
-    patterns: [
-      {name: "Spec transitions create startup cohorts", desc: "NVIDIA's 800VDC spec catalyzed Heron, DG Matrix, Claros, Amber Semi, Vertical Semi within 18 months. Standard shifts are the most reliable leading indicator of category birth."},
-      {name: "The inverter is a computer", desc: "SSTs are bidirectional, programmable, sensor-rich. Ship as capital-heavy hardware for design-ins; harvest software-margin economics on the installed base."}
-    ],
     whitespace: [
       {title: "MV-integrated BESS + SST bundles", desc: "SSTs natively integrate with BESS. The full-system OEM that ships MV+BESS+800VDC as one appliance for BTM sites is a natural roll-up but nobody owns it yet."}
     ],
@@ -1215,10 +1199,6 @@ const STAGES = [
       {date: "2026-Q1", title: "Intel 18A wafers running ahead of yield projections", desc: "Q1 2026 earnings call: Panther Lake shipments to rise 6-7x in Q2. Backside power moving from test-chip to production ramp.", source: "Intel"},
       {date: "2025-10", title: "Vertical Semiconductor $11M seed", desc: "MIT spinout. Vertical GaN transistors. Claims up to 30% efficiency gain, 50% smaller power footprint.", source: "Vertical Semi"},
       {date: "2028 target", title: "NVIDIA Feynman on TSMC A16", desc: "Rubin and Rubin Ultra stay on N3P; Feynman is the expected inflection point for backside power in AI accelerators.", source: "Industry consensus"}
-    ],
-    patterns: [
-      {name: "BSPDN as foundry differentiator", desc: "Foundry competitiveness is no longer only about transistor density. Power delivery architecture, how power reaches the transistor, is now a foundry-selection axis."},
-      {name: "MLCC as strategic component", desc: "Passive components (Murata, Samsung Electro-Mechanics) shifted from commodity to bottleneck. 13-15x increase per server in AI generation. Signal that BSPDN is committed."}
     ],
     whitespace: [
       {title: "Backside-power thermal management", desc: "BSPDN electrically improves current paths; thermally creates a new problem. No named startup addresses the backside-power heat path yet. Unworked category."},
@@ -1256,10 +1236,6 @@ const STAGES = [
       {date: "2025-12", title: "ZincFive Series F closes $30M", desc: "Oversubscribed. $254M raised since 2016. AI-server UPS traction.", source: "BusinessWire"},
       {date: "2025-09", title: "Natron Energy ceases operations", desc: "Sept 3, 2025. Sodium-ion cell maker shuts despite ARPA-E and planned $1.4B NC factory. Cautionary datapoint.", source: "Multiple"},
       {date: "2026-Q1", title: "Meta Prometheus revealed as no-genset design", desc: "SemiAnalysis: Meta's self-built AI DC targets 2-nines uptime, forgoes backup generators entirely. Structural buyer-behavior shift.", source: "SemiAnalysis"}
-    ],
-    patterns: [
-      {name: "Buyer segmentation matters more than physics", desc: "Same category, radically different TAM by buyer type. AI training operators (Meta scale) skip backup entirely. Inference operators, colos, regulated enterprise still want it. Underwrite the buyer, not the technology."},
-      {name: "Module integration over cell manufacturing", desc: "Natron's failure is the warning. Cell manufacturing is capital-heavy in ways that punish venture risk. Modules and software control are venture-shaped."}
     ],
     whitespace: [
       {title: "Rack-level integrated supercap+UPS+VFD appliance", desc: "The bundled 'transient armor' rack module, sold at rack level, not facility level, is not clearly owned. Would suit inference-heavy colos where SLA still matters."}
@@ -1304,10 +1280,6 @@ const STAGES = [
       {date: "2025-11", title: "CXL 4.0 spec released", desc: "Doubles bandwidth to 128 GT/s. Enables multi-rack memory pooling up to 4,096 nodes.", source: "CXL Consortium"},
       {date: "2025-09", title: "NVIDIA acquires Enfabrica core team >$900M", desc: "EMFASYS elastic memory fabric absorbed by NVIDIA. Consolidation signal at memory/fabric layer.", source: "TechCrunch"}
     ],
-    patterns: [
-      {name: "Memory has become the architecture", desc: "Chip designers now start with what memory hierarchy to build around, not what processor to build. HBM allocation is a strategic bottleneck. SK Hynix 58% operating margin proves the shift."},
-      {name: "Custom silicon race", desc: "Every major hyperscaler funding custom silicon (Trainium, TPU, Maia, MTIA) via design-service partners (Alchip, GUC). Etched, MatX, Positron pursue transformer-specialized ASICs. Architectural concentration risk."}
-    ],
     whitespace: [
       {title: "CXL fabric software / memory tiering", desc: "Thin remaining wedge after Enfabrica acquisition. Memory pooling software that intelligently tiers KV cache between HBM/CXL/SSD is a software-shaped opportunity."}
     ],
@@ -1345,10 +1317,6 @@ const STAGES = [
       {date: "2025-06", title: "Ultra Ethernet Consortium 1.0 released", desc: "100+ participating companies including NVIDIA. Open Ethernet spec for AI scale-out.", source: "UEC"},
       {date: "2025-04", title: "UALink 1.0 announced", desc: "Open scale-up protocol backed by AMD, Google, Intel, Meta, Microsoft. First commercial switches Q4 2026. Open alternative to NVLink.", source: "UALink"},
       {date: "2026-03", title: "Ayar Labs Series E $500M", desc: "TeraPHY optical I/O chiplet (8 Tbps, UCIe). AMD Ventures, NVIDIA participation.", source: "Ayar Labs"}
-    ],
-    patterns: [
-      {name: "Optics moving inward", desc: "Optical historically for between-DC connections. Now moving to rack-to-rack, then chip-to-chip. Ayar Labs (chiplet), Lightmatter (interposer), Broadcom Davisson CPO (switch). Each step brings new component/architecture opportunities."},
-      {name: "Standard fragmentation drives openings", desc: "NVLink Fusion opening the closed protocol to Qualcomm, Fujitsu, MediaTek. UALink launching as open alternative. Each protocol split creates translator/adapter silicon opportunities."}
     ],
     whitespace: [
       {title: "UALink ecosystem tooling", desc: "Open scale-up protocol launching Q4 2026. The Astera-Labs-on-CXL analog for UALink, tooling, validation IP, translator silicon, doesn't exist yet. Category will form 2026-27."}
@@ -1393,10 +1361,6 @@ const STAGES = [
       {date: "2025-09", title: "Corintis $24M Series A", desc: "AI-designed microfluidic cold plates. 3x heat removal vs standard plates in Microsoft trials.", source: "Corintis"},
       {date: "2026-06", title: "Ontario Yondr DC ready-for-service", desc: "27 MW Toronto facility with closed-loop cooling; no water consumption post-fill.", source: "DCD"}
     ],
-    patterns: [
-      {name: "Cooling-as-control software over hardware", desc: "Post-Ecolab consolidation, hardware wedge narrows. Phaidra-style AI control of cooling systems using real-time power draw as early-warning signal is the venture-shaped layer."},
-      {name: "Water as the next binding constraint", desc: "Central Texas, Phoenix, Las Vegas facing water-rights and discharge-permit constraints. Closed-loop and greywater systems moving from optional to mandatory."}
-    ],
     whitespace: [
       {title: "Water sourcing & rights aggregation", desc: "A 'Tract for water', pre-arranged water rights and discharge permits packaged as shovel-ready deliverables, is unnamed. Ecolab consolidation doesn't reach upstream water rights."},
       {title: "Backside-power thermal management", desc: "BSPDN creates new thermal path (heat exits frontside while power enters backside). Unworked category at the chip-packaging intersection."}
@@ -1438,10 +1402,6 @@ const STAGES = [
       {date: "2025-07", title: "Bedrock Robotics $80M seed/Series A", desc: "Eclipse and 8VC. Bedrock Operator autonomous retrofit for excavators, dozers, loaders.", source: "Bedrock"},
       {date: "2025-06", title: "Gecko Robotics $125M Series D at $1.25B", desc: "AI inspection robots for industrial infrastructure. Beyond early stage, context for category momentum.", source: "Gecko"},
       {date: "2024-10", title: "Molg $5.5M seed", desc: "Closed Loop Partners, Amazon Climate Pledge Fund, ABB. Robotic microfactories for server disassembly, the only anti-cyclical bet in the flow.", source: "Molg"}
-    ],
-    patterns: [
-      {name: "Construction-AI as mandatory layer", desc: "OpenSpace / Doxel / Buildots are not VC-fashionable, but their mandatory-deployment pattern on hyperscale projects is the strongest low-risk + buyer-pull combo in the thesis. Adjacent categories (safety automation, trade labor platforms, generative BIM) are unnamed."},
-      {name: "Anti-cyclical decommissioning insurance", desc: "GPU refresh compression creates ramping teardown volume regardless of new-build direction. Molg-shaped bets reprice UP in a capex contraction. Portfolio insurance."}
     ],
     whitespace: [
       {title: "Vertical trade labor platforms for DC construction", desc: "The 4,000-5,000 crew shortage is a labor-marketplace opportunity as much as a robotics one. Specialized platforms for MEP subcontractors on DC projects don't yet exist."},
@@ -1489,10 +1449,6 @@ const STAGES = [
       {date: "2025-10", title: "Crusoe Series E $1.4B", desc: "Energy-first AI cloud continues vertical integration.", source: "Crusoe"},
       {date: "2025-03", title: "CoreWeave IPO at ~$60B market cap", desc: "The canonical neocloud exit. Signals category maturity for hyperscale GPU cloud.", source: "CoreWeave"},
       {date: "2025-06", title: "Emerald AI $24.5M seed", desc: "Radical Ventures leads with NVIDIA, John Doerr, Jeff Dean, Fei-Fei Li. Phoenix test cut consumption 25% during grid stress. Aurora AI Factory VA is commercial proof point.", source: "Emerald AI"}
-    ],
-    patterns: [
-      {name: "Both-sides-of-the-meter translator wins", desc: "Verse, Camus, Senpilot, Gridcare, Soma sell to both utility and DC operator. Neither side has data the other needs; translator captures the spread. The most defensible position in the entire flow."},
-      {name: "Latent workload flexibility monetization", desc: "Emerald AI's Phoenix test proves training jobs can pause/throttle. Verse's Dispatch Intelligence proves BTM storage can 'skip the queue without slowing performance.' Load flexibility is real but commercial ramp is slower than hype."}
     ],
     whitespace: [
       {title: "WLPUN real-time compliance software", desc: "ERCOT Batch Zero introduced withdrawal-limited private-use networks. Real-time compliance enforcement across BTM dispatch + grid metering + load orchestration is unnamed. Category forms 2026-27."},
@@ -2197,8 +2153,7 @@ const STAGE_INSIGHTS = {
       "Community opposition has industrialized: 140+ local groups, statewide moratorium passed in NY, moratorium bills in TX/NM, ~$60B of investment blocked or delayed.",
       "Powered land trades at multiples of unpowered land, the information asymmetry between them is the arbitrage.",
       "Utilities and tenants increasingly demand performance letters of credit; no underwriting market exists for them."
-    ],
-    opportunity: "Compress the gate. Three venture shapes: AI-native permitting with a data flywheel (every processed permit improves the next, now a ~12-company cohort where the question is consolidation, not category), powered-land aggregation ahead of demand (Tract, Krios, Energy.LLC), and financial products around delivery risk. Performance-LOC underwriting for BTM delivery promises remains completely unowned, the kWh-Analytics-for-AI-power seat is empty."
+    ]
   },
   2: {
     meaning: "Where electrons enter the flow. Primary energy, gas, sun, uranium, geothermal heat, hydrogen, becomes AC power, either grid-delivered or behind the meter. BYOP (bring your own power) is now the default posture for new large DCs; the buyer's real decision variable is speed × certainty of delivery, not $/MWh alone.",
@@ -2209,8 +2164,7 @@ const STAGE_INSIGHTS = {
       "CCGT development takes 4-6 years, structurally too slow for the AI buildout.",
       "Nuclear and fusion offtakes are promises of 2028-2035 electrons being used to justify 2026 valuations.",
       "Utility load-ramp promises are routinely broken with no symmetric penalties, speed is priced, certainty is not."
-    ],
-    opportunity: "Own the certainty layer. Software and services wrapped around incumbent iron (dispatch optimization, fuel logistics, performance underwriting), a secondary market for turbine delivery slots, meaning reserved positions in manufacturer order books, which today trade informally with no broker (unnamed), miner-conversion picks-and-shovels (retrofit EPC, cooling swap kits, largely unnamed), and modular clean-firm (SMR, EGS, LDES) with real DC offtakes. Underwrite on contracted delivery with penalty teeth, not technology romance. AUG 2026 data check: 87 companies now sit in this stage at $64M median rounds, project-finance economics. Treat the stage as a customer list, not a portfolio; venture returns accrue to whoever sells certainty, compliance, and logistics to these 87."
+    ]
   },
   3: {
     meaning: "The connective tissue: generator to substation to HV lines to the facility fence. Every project needs either physical capacity (transformers, breakers, switchgear) or contractual capacity (interconnection rights), both are scarce, and the queue for the second is measured in years.",
@@ -2221,8 +2175,7 @@ const STAGE_INSIGHTS = {
       "PJM's 2027/28 auction cleared 6.5 GW short of its reserve target; 24 GW of fully-executed interconnection agreements have terminated pre-COD since 2020.",
       "13 of 23 NERC assessment areas face adequacy shortfalls.",
       "Reform is the risk: FERC §206 orders, PJM's expedited track, and ERCOT Batch Zero all compress the queue-arbitrage margin that several portfolio-shaped companies depend on."
-    ],
-    opportunity: "Latent-capacity extraction: interconnection/queue software (Gridcare, Nira), DLR and GETs (LineVision, Gridraven), hidden-ELCC analytics (still unnamed), transformer supply-chain arbitrage (Ayr now has followers in FluxCo, Northfield, Monarch), and superconducting corridors (VEIR, Subra). Underwrite every queue-arbitrage bet against a 'reform succeeds' downside, June 2026 showed reform arriving faster than expected."
+    ]
   },
   4: {
     meaning: "The middle mile inside the data center: medium-voltage AC becomes ~800VDC at the facility. NVIDIA's 800VDC standard collapses a decades-old chain of transformers, rectifiers, UPS and PDUs into a shorter, DC-native path, obsoleting incumbent product lines and birthing a startup cohort in the same stroke.",
@@ -2232,8 +2185,7 @@ const STAGE_INSIGHTS = {
       "Copper is failing simultaneously as data medium and power medium.",
       "The 800VDC transition strands existing UPS/PDU product lines and the balance-sheet capex behind them.",
       "SSTs exist but nobody ships MV + BESS + 800VDC as one integrated appliance for BTM sites."
-    ],
-    opportunity: "The 800VDC standard is forcing every power component between the substation and the rack to be redesigned, and that has opened two different games. The component game, individual converters and power chips, has already been taken by the incumbents: TI, Infineon, ST, Advanced Energy, and Enphase all shipped 800VDC products within a year of the spec. The open game is integration: no one, incumbent or startup, sells a single ready-made system that takes medium-voltage grid power in, includes the battery, and delivers 800VDC out, the exact product a behind-the-meter site without a large engineering team wants to buy. The startups closest to it are the solid-state transformer makers (Heron, DG Matrix, Amperesand); the timing is set by the OCP Diablo 400 spec, which standardized the interfaces and made the integrated product buildable."
+    ]
   },
   5: {
     meaning: "The last meter: 800VDC (or legacy 54VDC) down to 0.7-0.8V at the transistor, at currents that have crossed 1,500A and are headed to ~3,000A per package. Voltage drop across milliohms is now a compute performance limiter, not an electrical footnote.",
@@ -2243,8 +2195,7 @@ const STAGE_INSIGHTS = {
       "Vertical power delivery requires packaging supply chains that don't exist at volume.",
       "BSPDN solves the electrical problem and creates a thermal one: heat must exit frontside while power enters backside, an unworked category.",
       "Passive component counts (MLCCs) grow 13-15x vs traditional servers."
-    ],
-    opportunity: "Vertical GaN (Vertical Semiconductor), power-delivery IP (ADI/Empower path), wafer-level engineering (Rayton), and, the most open surface, backside-power thermal management, where no startup is named anywhere. NVIDIA Feynman (~2028) is the expected accelerator inflection for backside power; the cohort it catalyzes is forming now."
+    ]
   },
   6: {
     meaning: "The cross-cutting shock absorber. AI training swings megawatts in milliseconds between idle and peak; something must buffer between the chips and the grid or breakers trip, voltage sags, and utilities push back. Buffering lives at rack level (supercaps), facility level (BESS/UPS), or the grid interface (Na-ion, Ni-Zn, flywheels).",
@@ -2254,8 +2205,7 @@ const STAGE_INSIGHTS = {
       "Lithium is the wrong chemistry for high-cycle transient buffering; the right chemistries carry cell-manufacturing capex risk (Natron died Sept 2025 despite ARPA-E backing).",
       "Post-Prometheus, the buyer TAM is narrower than the headline market, segmentation matters.",
       "Grid operators are starting to mandate ride-through and curtailment behavior (ERCOT) that current architectures can't deliver."
-    ],
-    opportunity: "Chemistry-appropriate buffering sold as a rack-level 'transient armor' appliance, supercap + UPS + control in one box for inference-heavy colos. PowerX's Energy Blade (May 2026) is the first named product in the slot; no NA pure-play owns it."
+    ]
   },
   7: {
     meaning: "Where power and data finally meet arithmetic. The binding constraint is not FLOPs, it is memory bandwidth and data movement. Compute performance grows 3.0x per two years while DRAM bandwidth grows 1.6x and interconnect 1.4x; the gap is the story.",
@@ -2264,8 +2214,7 @@ const STAGE_INSIGHTS = {
       "47% of accelerator energy goes to data movement, 8% to multiply-accumulate (Dally).",
       "Communication is 43.6% of MoE forward-pass time, 65.9% of long-context inference.",
       "Model size grew 410x per two years against 1.6x memory bandwidth growth."
-    ],
-    opportunity: "Exits in this stage run through hyperscaler M&A at prices set by strategics: NVIDIA absorbed Enfabrica's team for over $900M, Marvell paid $3.25B for Celestial, and that dynamic shapes what independent value can be built. Two software surfaces sit outside it. Memory tiering, where the CXL pooling seat is thinly held (UnifabriX, Panmnesia) and MoE expert placement remains entirely unbuilt. And the toolchain layer forming against the programmability tax (Infinity, Luminal, BoolSi, Kernelize, ElastixAI, tiny corp), where compilers rather than chips contest the CUDA moat. The photonic attacks on the memory wall (Piris, Netpreme, Opticore) are the deep-tech frontier of the same problem."
+    ]
   },
   8: {
     meaning: "Moving bits between chips costs 1-3 orders of magnitude more per bit at every hop outward (chip → package → rack → row → region). Copper hit its wall at 224 Gbps with sub-meter reach; optics is moving from between buildings to inside the package.",
@@ -2274,8 +2223,7 @@ const STAGE_INSIGHTS = {
       "Sub-1m copper reach at 224 Gbps forces optics into cost/power envelopes it hasn't met before.",
       "Interconnect power is the fastest-growing line item in cluster energy budgets.",
       "UALink ecosystem tooling (test, compliance, fabric software) barely exists."
-    ],
-    opportunity: "Exits mirror the compute stage: photonics consolidates into strategics (Celestial to Marvell at $3.25B), and the remaining independents are late-stage. Two surfaces stay open. First, the ecosystem around open fabrics: UALink 2.0 is released, the first switches land Q4 2026, and the compliance, testing, and fabric-management layer around them, the role Astera Labs built on CXL into a $9B listing, has no startup owner. Second, operations: co-packaged optics ships at scale this year, and the serviceability layer for it, monitoring, failure prediction, and field-replacement workflows for optics fused into a package, does not yet exist."
+    ]
   },
   9: {
     meaning: "Essentially all the electricity entering a rack leaves as heat, and the thermal path now competes with the power path for the same square millimeters of chip real estate. Water, for cooling and for discharge permits, is becoming the second binding physical resource after electrons.",
@@ -2285,8 +2233,7 @@ const STAGE_INSIGHTS = {
       "Water sourcing and discharge permitting now bind projects in tier-1 markets.",
       "BSPDN (Stage 5) will move heat extraction problems INTO the package, no one owns that category.",
       "Consolidation (Ecolab/CoolIT, Vertiv/ThermoKey) is narrowing the standalone-hardware window."
-    ],
-    opportunity: "Four surfaces: chip-level microfluidics/two-phase (Corintis, EmCool, Infiniflux), water generation and recovery (crowding fast, Aquaria $112M, AquaPoro, WaHa, WAVR, Uravu), heat reuse as a revenue line (E-Heat, Calentix, OnZero, strong in Europe, absent in NA), and cooling-as-control software (Phaidra). The unowned arbitrage remains water RIGHTS aggregation, 'Tract for water' in TX/AZ/NV. Nobody has named it."
+    ]
   },
   10: {
     meaning: "The cross-cutting wrapper: construct the building, operate it, maintain it, secure it, tear it down. This stage is increasingly labor-bound rather than equipment-bound, and it contains the flow's only anti-cyclical position (decommissioning ramps whether the buildout accelerates or stalls).",
@@ -2296,8 +2243,7 @@ const STAGE_INSIGHTS = {
       "DC construction spending is running 4x the 2025 record ($58.1B YTD through May), labor physically cannot scale with it.",
       "60% of DC providers struggle to fill roles; electricians are the binding trade.",
       "GPU refresh compressed from 5-7 years to 18-36 months, a teardown wave arrives regardless of the capex cycle."
-    ],
-    opportunity: "Construction autonomy and prefab (Bedrock at $1.75B shows the ceiling), vertical trade-labor platforms (Skillit is the first mover; the DC-specific MEP marketplace is still open), O&M robotics, DC-specific OT security (Bastille/Claroty are general-purpose; the facility-systems pure-play is unnamed), and decommissioning (Molg as portfolio insurance, Reconext as the incumbent-scale comp)."
+    ]
   },
   11: {
     meaning: "The return path: electrons come back to the buyer as billable tokens. This is where energy economics meets workload economics, where the flow monetizes, and it is home to the single strongest pattern in the thesis: both-sides-of-the-meter translators who sell to the utility AND the DC operator, capturing the spread neither side can see alone.",
@@ -2307,8 +2253,7 @@ const STAGE_INSIGHTS = {
       "DCs present as firm load in markets that increasingly pay for flexibility (ERCOT curtailment rules, PJM programs).",
       "Utilities and operators each lack the other's data; the translator seat captures the spread.",
       "Compute buyers cannot hedge price or availability, until the futures rails now forming."
-    ],
-    opportunity: "The strongest position in this stage is the translator: software that sells to both the utility and the data center operator and prices the information spread between them, the pattern behind Soma, Verse, Camus, and Senpilot, and the energy-compute analog of Plaid or Stripe. A second front is workload flexibility sold as a grid product, proven at commercial scale by the 96MW Aurora facility in Virginia. A third is forming now: compute financialization, with ICE-linked GPU futures, a CFTC-registered exchange in progress, and independent benchmark providers, the market plumbing that gives compute a forward curve. The durable winner there likely pairs a transaction-printed index with regulated clearing."
+    ]
   }
 };
 
@@ -2601,7 +2546,7 @@ function renderFlowOverview() {
               `).join("")}
             </div>
             <div class="stage-card-footer">
-              <span>${s.news.filter(hasSource).length} news · ${s.patterns.length} patterns · ${WHITESPACE.filter(w => w.stage === s.id).length} opportunities</span>
+              <span>${s.news.filter(hasSource).length} news · ${WHITESPACE.filter(w => w.stage === s.id).length} open seats</span>
               <span class="stage-card-open">DEEP-DIVE →</span>
             </div>
           </div>
@@ -2610,6 +2555,44 @@ function renderFlowOverview() {
     </div>
   `;
 }
+
+
+// DATA :: THE TWO MOVES PER STAGE (thesis-derived)
+const MOVES = {
+ 1:{shorten:"Siting is a search over public records performed at consultant speed: agents on a parcel-level geospatial corpus collapse months to days, and a month saved at the top of the flow compounds through every stage downstream. The second shortening is bigger and needs no hardware: utilities study data centers as static worst-case loads, and correcting that description releases existing-grid headroom Duke sizes at 76-126 GW under sub-1% curtailment.",
+ own:"Energized land is the flow's most upstream chokepoint: everything below is hostage to it. The venture-ownable version is the data asset a siting engine accumulates, a continuously updated map of where the flow can physically go next that later entrants must buy or rebuild.",
+ timing:"The heavy end of the dumbbell: 54% of this stage's companies were founded 2024 or later. The fastest-moving risk is political license, being renegotiated county by county."},
+ 2:{shorten:"Behind-the-meter generation deletes the interconnection queue outright: gas is the three-year answer physically being installed now. In nuclear, the shorten move runs against two clocks at once, the NRC docket (ordinary fuel and physics the regulator already knows) and the construction site (factory-built, truck-delivered reactors targeting under 24 months against the industry's decade).",
+ own:"Nuclear's chokepoints are documents, the materials that hold: an approved design (an exclusive reactor license), licensable fuel, enrichment capacity (a $900M DOE award). No competitor routes around them without a decade of review.",
+ timing:"The cohort is keeping its calendar: a full-scale test reactor reached first criticality at INL in July 2026, built in ~8 months. Paperwork gates the next handful of deployments; industrial capacity (fuel qualification, nuclear-qualified welders) gates the next hundred."},
+ 3:{shorten:"The queue is institutional memory cast in factory capacity: ~4-year transformer lead times because demand was flat for two decades and survivors sized factories for replacement. Manufacturing where capacity never stopped growing compresses delivery to about a year, but the time value is captured downstream by whoever owns the project that starts earning sooner, the $25/kW lesson.",
+ own:"Qualified-vendor status: utility approved lists take years of testing and field acceptance, and competitors cannot hire through them. The tension is that qualification tends to freeze exactly the manufacturing flexibility being sold; the own half of the sequence is still unproven here.",
+ timing:"A chokepoint being competed away in real time: GE Vernova booked $2.4B of data-center equipment orders in Q1 2026 alone. Short-half-life toll; durable only if it converts into a position."},
+ 4:{shorten:"800 VDC collapses four-plus conversion stages to two; every deleted conversion returns its loss and its equipment queue at once. Solid-state transformers and DC distribution are the cohort the published spec called into existence.",
+ own:"A slot in the spec-setter's reference design. The calendar is now consortium-published (NVIDIA with Google and Microsoft through OCP), which makes the dates more binding; the bear case is that the cohort functions as a supplier-development program with exits capped at strategic prices.",
+ timing:"Cohorts here carry the spec's date as a birthmark: a quarter of the stage holds 2026 rounds. The wave is arriving."},
+ 5:{shorten:"The last stretch of conversion at the chip's doorstep. Vertical GaN withstands higher voltage in a smaller footprint than the lateral devices in laptop chargers; backside power delivery (PowerVia shipping, A16 targeted 2027) migrates conversion under the die itself.",
+ own:"Device physics that took a decade of lab work, plus first claim on scarce bulk-GaN substrates (why the substrate supplier sits on the cap table). The graveyard is real: the last two US vertical-GaN pure-plays died on exactly those substrate economics.",
+ timing:"The emptiest calendar page on the map: zero of seven companies here closed a 2026 round while the spec clock has printed two pages pointing at this seam. Reads less like absence, more like a date that has not arrived."},
+ 6:{shorten:"AI loads swing megawatts in milliseconds; buffering those transients between chips and grid returns the safety margin operators currently freeze. Every joule of transient headroom is capacity the facility already bought.",
+ own:"An installed buffer wired between the chips and the grid is infrastructure with real switching costs; the materials are physics (electrochemistry, flywheels, supercaps) and installed position.",
+ timing:"Three of nine companies here hold 2026 rounds, a small base with fresh capital: the wavefront arriving from the cooling settlement next door."},
+ 7:{shorten:"Two attacks at once. The memory wall's physical doors: photonic interconnect over CXL, photonic compute, and 3D packaging all shorten the distance bits travel. And bring-up: AI-written kernels collapse the months-to-years software tax every non-NVIDIA chip pays before its first customer.",
+ own:"HBM is the flow's cleanest physics chokepoint, three suppliers gated by packaging, sitting upstream of every accelerator, and itself hostage to CoWoS allocation and new DRAM fabs, which are hostage to grid connections. The software door through the wall closed at a $400M seed; NVIDIA's software moat is eroding while its hardware moat deepens.",
+ timing:"Mixture-of-experts steepens the memory-capacity pressure: every expert must stay resident though few fire per token. The physical doors are held by seed-stage teams; the arithmetic that opens them is already settled."},
+ 8:{shorten:"Move bits on light instead of copper at every scale above the package: co-packaged optics at the switch deletes electrical hops the way liquid cooling deleted air.",
+ own:"Standards seats in the co-packaged-optics roadmap are the ownable positions forming now; the chip-to-chip optical cohort (founded 2015-2020) has already graduated to unicorn scale and priced that window.",
+ timing:"The full closed-window signature the thesis flags: an aging graduated cohort, a spec calendar printing, almost no young entrants. Switch-level optics is a named next-cohort prediction."},
+ 9:{shorten:"The chip-level war is settled ($4.75B CoolIT exit); the open shortening is the heat's exit from the site: delete the mechanical chiller (dew-point cooling below the wet-bulb limit) and most of the tower's water bill. In a water-constrained county, saved water converts into the scarcest input of all, permit approval.",
+ own:"Little is owned here yet: proven performance data at scale is the nearest asset. Water as procurement, rights, reuse, acquisition, is an empty own column the thesis names outright.",
+ timing:"The constraint walked from chip to site boundary and capital has not followed: one of 46 companies here holds a 2026 round. Dry-air physics bounds the dew-point play to West Texas and the Southwest, not Gulf-humid metros."},
+ 10:{shorten:"Construction speed is the buildout's hard floor: robotics on earthworks and inspection, AI on design and coordination, and experts-plus-agents services compressing hardware bring-up (the same shape as agentic siting, applied to circuit boards).",
+ own:"Almost nothing: this stage's binding constraint is skilled labor, a 439,000-electrician gap that venture structurally cannot fix, one labor platform on the map notwithstanding.",
+ timing:"The bottom of the dumbbell, 12% founded 2024+, because construction tech's founding wave came a decade ago for other customers. The quiet is a served market plus an unserved labor constraint, not health."},
+ 11:{shorten:"The workload changed shape twice, sessions and mixture-of-experts, so the stack is being rebuilt from the primitive up: session-native serving, orchestration CPUs, GPU checkpoint/live-migration (the missing vMotion), and a facility OS that returns megawatts frozen as fear margin.",
+ own:"Installed control planes compound into dependency, the thing a fleet cannot rip out without downtime. Above them, the reference-price seat in compute (a price index racing a rival CME listing to market) is a chokepoint made of market structure, being contested now.",
+ timing:"The other heavy end of the dumbbell: 54% founded 2024 or later. The platform layer has graduated (a serving platform at ~$600M annualized revenue); the primitives beneath it are still open seats."}
+};
 
 function renderStageDetail(stageId) {
   const s = STAGES.find(x => x.id === stageId);
@@ -2663,24 +2646,14 @@ function renderStageDetail(stageId) {
       </div>
 
       <div class="insight-block" style="border-left-color: var(--green);">
-        <h4 style="color:var(--green);">◈ WHERE THE OPPORTUNITY IS</h4>
-        <p>${ins.opportunity || "-"}</p>
+        <h4 style="color:var(--green);">◈ THE TWO MOVES AT THIS STAGE · FROM THE THESIS</h4>
+        <div class="move-row"><span class="move-tag">SHORTEN</span><p>${(MOVES[stageId]||{}).shorten || "-"}</p></div>
+        <div class="move-row"><span class="move-tag" style="color:var(--green);">OWN</span><p>${(MOVES[stageId]||{}).own || "-"}</p></div>
+        <div class="move-row"><span class="move-tag" style="color:var(--muted);">TIMING</span><p>${(MOVES[stageId]||{}).timing || "-"}</p></div>
       </div>
 
       <div class="detail-section">
-        <h3>EMERGING PATTERNS · THESIS-RELEVANT</h3>
-        <div class="pattern-list">
-          ${s.patterns.map(p => `
-            <div class="pattern-item">
-              <div class="pattern-name">${p.name}</div>
-              <div class="pattern-desc">${p.desc}</div>
-            </div>
-          `).join("")}
-        </div>
-      </div>
-
-      <div class="detail-section">
-        <h3>OPPORTUNITIES · WHERE THE GAPS ARE</h3>
+        <h3>OPEN SEATS · SPECIFIC GAPS ON THE MAP</h3>
         <div class="whitespace-list">
           ${WHITESPACE.filter(x => x.stage === s.id).map(w => `
             <div class="whitespace-item">
@@ -3507,7 +3480,7 @@ function processChatQuery(q) {
     return addChatMessage("bot", `<strong>◈ STAGE ${s.code} · ${s.name}</strong>, ${s.tagline}<br><br>
       ${ins.meaning || s.physical}<br><br>
       <strong>Top pain:</strong> ${(ins.pain || []).slice(0, 2).map(x => "· " + x).join("<br>")}<br><br>
-      <strong>Opportunity:</strong> ${(ins.opportunity || "").split(". ").slice(0, 2).join(". ")}.<br><br>
+      <strong>Shorten:</strong> ${((MOVES[sid]||{}).shorten || "").split(". ").slice(0, 1).join(". ")}.<br><strong>Own:</strong> ${((MOVES[sid]||{}).own || "").split(". ").slice(0, 1).join(". ")}.<br><br>
       <span class="co-detail">${count} companies mapped · ${s.news.length} news items · ${ws.length} opportunities. Click STAGE ${s.code} in the flow strip for the full brief.</span>`);
   }
 
@@ -3564,9 +3537,10 @@ function processChatQuery(q) {
     const sids = p.stages.length ? p.stages : STAGES.map(s => s.id);
     let out = "";
     STAGES.filter(s => sids.includes(s.id)).forEach(s => {
-      s.patterns.forEach(pt => { out += `<div class="chat-result-row"><span class="chat-stage-tag">S${s.code}</span> <strong>${pt.name}</strong><br><span class="co-detail">${pt.desc}</span></div>`; });
+      const mv = MOVES[s.id]; if (!mv) return;
+      out += `<div class="chat-result-row"><span class="chat-stage-tag">S${s.code}</span> <strong>SHORTEN</strong> <span class="co-detail">${mv.shorten}</span><br><strong>OWN</strong> <span class="co-detail">${mv.own}</span></div>`;
     });
-    return addChatMessage("bot", `<strong>◈ Emerging patterns${p.stages.length ? " · stage " + p.stages.join("+") : ""}</strong><br>` + out);
+    return addChatMessage("bot", `<strong>◈ The two moves${p.stages.length ? " · stage " + p.stages.join("+") : ""}</strong><br>` + out);
   }
 
   // --- count ---
