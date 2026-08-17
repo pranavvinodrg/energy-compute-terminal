@@ -2645,11 +2645,11 @@ function renderStageDetail(stageId) {
         <ul>${(ins.pain || []).map(p => `<li>${p}</li>`).join("")}</ul>
       </div>
 
-      <div class="insight-block" style="border-left-color: var(--green);">
-        <h4 style="color:var(--green);">◈ THE TWO MOVES AT THIS STAGE · FROM THE THESIS</h4>
+      <div class="insight-block">
+        <h4>◈ THE TWO MOVES AT THIS STAGE · FROM THE THESIS</h4>
         <div class="move-row"><span class="move-tag">SHORTEN</span><p>${(MOVES[stageId]||{}).shorten || "-"}</p></div>
-        <div class="move-row"><span class="move-tag" style="color:var(--green);">OWN</span><p>${(MOVES[stageId]||{}).own || "-"}</p></div>
-        <div class="move-row"><span class="move-tag" style="color:var(--muted);">TIMING</span><p>${(MOVES[stageId]||{}).timing || "-"}</p></div>
+        <div class="move-row"><span class="move-tag">OWN</span><p>${(MOVES[stageId]||{}).own || "-"}</p></div>
+        <div class="move-row"><span class="move-tag">TIMING</span><p>${(MOVES[stageId]||{}).timing || "-"}</p></div>
       </div>
 
       <div class="detail-section">
