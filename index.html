@@ -853,8 +853,8 @@ a:hover { text-decoration-thickness: 2px; }
 .thesis-body p { font-family: var(--font-body); font-size: 15.5px; line-height: 1.85; color: var(--white); margin-bottom: 18px; }
 .thesis-body ul { margin: 0 0 18px 20px; }
 .thesis-body li { font-family: var(--font-body); font-size: 15.5px; line-height: 1.8; color: var(--white); margin-bottom: 10px; }
-.thesis-h2-kicker { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 2.5px; color: var(--amber); margin: 46px 0 0; padding: 11px 16px 0; background: var(--bg-panel); border: 1px solid var(--border); border-bottom: none; border-left: 3px solid var(--amber); }
-.thesis-body h2 { font-family: var(--font-head); font-size: 24px; font-weight: 700; color: var(--white); line-height: 1.25; margin: 0 0 20px; padding: 5px 16px 13px; background: var(--bg-panel); border: 1px solid var(--border); border-top: none; border-left: 3px solid var(--amber); scroll-margin-top: 110px; }
+.thesis-h2-kicker { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 2.5px; color: var(--amber); margin: 46px 0 0; }
+.thesis-body h2 { font-family: var(--font-head); font-size: 25px; font-weight: 700; color: var(--white); line-height: 1.25; margin: 4px 0 18px; padding-bottom: 10px; border-bottom: 1px solid var(--border); scroll-margin-top: 90px; }
 .thesis-body a { color: var(--amber-bright); text-decoration: none; border-bottom: 1px dotted var(--amber-dim); }
 .thesis-body a:hover { border-bottom-style: solid; }
 .th-co { color: var(--amber-bright); font-weight: 600; cursor: pointer; border-bottom: 1px solid var(--amber-dim); }
@@ -2286,7 +2286,6 @@ const THESIS_SOURCES = [
 
 const COMMENTARY = [
   {date:"2026-06", analyst:"Currence (ex-Sightline Climate)", title:"The Data Center Report You Haven't Read", take:"Credibility-scores 1,000+ announced US data center projects against 35,000+ power projects and finds roughly half of announced capacity likely delayed or canceled. The demand signal, filtered for what can actually energize.", url:"https://www.ctvc.co/the-data-center-report-we-promise-you-havent-read/", stages:[1,2,3]},
-  {date:"2026-05", analyst:"Bessemer Venture Partners", title:"Roadmap: The AI Data Center Stack", take:"The closest published cousin to this terminal: six layers from permitting and site selection through cooling, explicit bottleneck-migration language, and a stated goal of making electrons cheaper, faster, and smarter. Six stages and ~20 companies to this map's eleven and ~450.", url:"https://www.bvp.com/atlas/roadmap-the-ai-data-center-stack", stages:[1,2,3,4,9,11]},
   {date:"2025-12", analyst:"CB Insights", title:"The Data Center Value Chain Market Map", take:"367 companies across 45 markets in seven layers, generation to facility ops. Broad and structured but paywalled and narrative-free; useful as a coverage cross-check against this map's stages.", url:"https://www.cbinsights.com/research/report/data-center-value-chain-market-map/", stages:[1,2,7,11]},
   {date:"2025-05", analyst:"MIT Technology Review", title:"Power Hungry: AI and Our Energy Future", take:"The mainstream reference package on AI's energy footprint, anchored by novel reporting on inference energy, the demand side most coverage skips. Where the public-license debate gets its numbers.", url:"https://www.technologyreview.com/supertopic/ai-energy-package/", stages:[2,9]},
   {date:"2025-04", analyst:"IEA", title:"Energy and AI", take:"The global macro reference: data-centre electricity to ~945 TWh by 2030 with AI the dominant driver, country-level grid constraints, and the supply-demand gap framed as the decade's infrastructure problem.", url:"https://www.iea.org/reports/energy-and-ai", stages:[2,3]},
